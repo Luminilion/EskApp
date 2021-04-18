@@ -44,4 +44,5 @@ timer et de vérification des réponses ne changent pas.
 ## Ressources
 
 Lien vers le [schéma de l'architecture](https://drive.google.com/drive/u/1/folders/1LZm_0zh2CrXdYylaFwDPhoMR2Es9AU-K).
+
 Lien vers le [Drive du projet](https://drive.google.com/drive/u/1/folders/1gkTGRsp7eQiq7-8Y7l8PfBTDsjNfsm7U).
