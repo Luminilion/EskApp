@@ -2,8 +2,8 @@
 ---
 ## 1. Presentation
 
-This app is developed in the context of the Gestion de Projets SHS at EPFL.
-The team is composed is composed of members:
+Cette app est développée dans le cadre du cours de SHS Gestion de Projets à l'EPFL.
+Il est composé des membres suivants:
 - Chaimae B.
 - Clément C.
 - Levy F.
