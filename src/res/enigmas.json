@@ -1,7 +1,7 @@
 [
 	{
 		"cacher": [
-			"puzzle",
+			"puzzle1",
 			"QR code"
 		],
 		"indications": [
@@ -15,7 +15,111 @@
 
 	{
 		"cacher": [
-			"cadenas",
+			"cadenas2",
+			"roue"
+		],
+		"indications": [
+			"Configurez le cadenas sur 1234"
+		],
+		"indices": [
+			"Un objet et une énigme débloqueront la situation."
+		]
+	},
+	{
+		"cacher": [
+			"puzzle3",
+			"QR code"
+		],
+		"indications": [
+			"Eparpillez les cases du puzzle.",
+			"Eparpillez les QR codes."
+		],
+		"indices": [
+			"Chercher des petits objets."
+		]
+	},
+
+	{
+		"cacher": [
+			"cadenas4",
+			"roue"
+		],
+		"indications": [
+			"Configurez le cadenas sur 1234"
+		],
+		"indices": [
+			"Un objet et une énigme débloqueront la situation."
+		]
+	},
+	{
+		"cacher": [
+			"puzzle5",
+			"QR code"
+		],
+		"indications": [
+			"Eparpillez les cases du puzzle.",
+			"Eparpillez les QR codes."
+		],
+		"indices": [
+			"Chercher des petits objets."
+		]
+	},
+
+	{
+		"cacher": [
+			"cadenas6",
+			"roue"
+		],
+		"indications": [
+			"Configurez le cadenas sur 1234"
+		],
+		"indices": [
+			"Un objet et une énigme débloqueront la situation."
+		]
+	},
+	{
+		"cacher": [
+			"puzzle7",
+			"QR code"
+		],
+		"indications": [
+			"Eparpillez les cases du puzzle.",
+			"Eparpillez les QR codes."
+		],
+		"indices": [
+			"Chercher des petits objets."
+		]
+	},
+
+	{
+		"cacher": [
+			"cadenas8",
+			"roue"
+		],
+		"indications": [
+			"Configurez le cadenas sur 1234"
+		],
+		"indices": [
+			"Un objet et une énigme débloqueront la situation."
+		]
+	},
+	{
+		"cacher": [
+			"puzzle9",
+			"QR code"
+		],
+		"indications": [
+			"Eparpillez les cases du puzzle.",
+			"Eparpillez les QR codes."
+		],
+		"indices": [
+			"Chercher des petits objets."
+		]
+	},
+
+	{
+		"cacher": [
+			"cadenas10",
 			"roue"
 		],
 		"indications": [
