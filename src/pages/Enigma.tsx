@@ -1,6 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Enigma.css';
 
+import enigmas from "../res/enigmas.json";
+
 const Enigma: React.FC = () => {
   return (
     <IonPage>
@@ -12,7 +14,19 @@ const Enigma: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
-        <p>Fill me in!</p>
+
+        <ul>{enigmas.map(id => (
+          <li>
+            Il vous faut cacher les éléments suivants : <ol>
+              {id.cacher.map(e => (<li>{e}</li>))}
+            </ol>
+            Indications : <ol>
+              {id.indications.map(i => (<li>{i}</li>))}
+            </ol>
+            <br />
+          </li>
+        ))}</ul>
+
       </IonContent>
 
     </IonPage>

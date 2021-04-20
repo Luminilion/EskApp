@@ -1,0 +1,28 @@
+[
+	{
+		"cacher": [
+			"puzzle",
+			"QR code"
+		],
+		"indications": [
+			"Eparpillez les cases du puzzle.",
+			"Eparpillez les QR codes."
+		],
+		"indices": [
+			"Chercher des petits objets."
+		]
+	},
+
+	{
+		"cacher": [
+			"cadenas",
+			"roue"
+		],
+		"indications": [
+			"Configurez le cadenas sur 1234"
+		],
+		"indices": [
+			"Un objet et une énigme débloqueront la situation."
+		]
+	}
+]
