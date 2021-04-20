@@ -5,6 +5,7 @@ import { IonReactRouter } from '@ionic/react-router';
 
 // Import components
 import Home from './pages/Home';
+import Enigma from './pages/Enigma'
 import Indications from './pages/enigma/Indications';
 import Buzzer from './pages/enigma/Buzzer';
 import BuzzerSolo from './pages/enigma/BuzzerSolo';
@@ -32,7 +33,7 @@ import './theme/variables.css';
 
 /*
 Notes :
-  - pour l'instant pour voir les pages, il faut changer 
+  - pour l'instant pour voir les pages, il faut changer
   dans l'url le "/home" en "/buzzer" pour aller sur le buzzer par exemple
 
 */
@@ -46,6 +47,10 @@ const App: React.FC = () => (
 
         <Route exact path="/">
           <Redirect to="/home" />
+        </Route>
+
+        <Route exact path="/enigma">
+          <Enigma />
         </Route>
 
         <Route exact path="/indications">
