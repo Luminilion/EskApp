@@ -50,10 +50,10 @@ const Home: React.FC = () => {
           </IonCardHeader>
           <br />
           <IonCardContent >
-            <IonButton expand="block" color="secondary" >Une partie (enveloppe)</IonButton>
+            <IonButton expand="block" color="secondary">Une partie (enveloppe)</IonButton>
           </IonCardContent>
           <IonCardContent >
-            <IonButton expand="block" color="tertiary"   >Une nouvelle partie  </IonButton>
+            <IonButton expand="block" color="tertiary"  routerLink="/enigma" >Une nouvelle partie  </IonButton>
           </IonCardContent>
         </IonCard>
       </IonContent>
