@@ -6,6 +6,8 @@ import { IonReactRouter } from '@ionic/react-router';
 // Import components
 import Home from './pages/Home';
 import Enigma from './pages/Enigma'
+import JoueursConfig from './pages/JoueursConfig';
+import JoueursAttribution from './pages/JoueursAttribution';
 import Indications from './pages/enigma/Indications';
 import Buzzer from './pages/enigma/Buzzer';
 import BuzzerSolo from './pages/enigma/BuzzerSolo';
