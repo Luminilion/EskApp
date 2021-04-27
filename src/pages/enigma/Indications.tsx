@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Indications.css';
 import { useEnigmaState } from "../../hooks/EnigmaType";
+import logo from '../../img/logo.png';
 
 const Indications: React.FC = () => {
 
@@ -24,7 +25,8 @@ const Indications: React.FC = () => {
 
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Indications</IonTitle>
+        <img src={logo} height="50" width="150" />
+          <IonTitle  class="ion-text-center">Indications</IonTitle>
         </IonToolbar>
       </IonHeader>
 

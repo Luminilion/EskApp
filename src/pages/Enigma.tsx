@@ -1,12 +1,14 @@
 import {
   IonContent, IonHeader, IonPage,
-  IonTitle, IonToolbar, IonButton
+  IonTitle, IonToolbar, IonButton, IonCardContent,
 } from '@ionic/react';
 import { useState } from 'react';
 import { useEnigmaState } from "../hooks/EnigmaType";
 
 import './Enigma.css';
 import enigmas_data from "../res/enigmas.json";
+import logo from '../img/logo.png';
+
 
 const Enigma: React.FC = () => {
 
@@ -22,18 +24,26 @@ const Enigma: React.FC = () => {
 
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Indications</IonTitle>
+          <img src={logo} height="50" width="150" />
+          <IonTitle  class="ion-text-center">Indications</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
 
+
         <h1>La partie est créée !</h1>
 
         <p>Passez le téléphone à la première équipe.</p>
+        <br /> 
+        <br />
+        <IonContent class="ion-text-center" >
+        <IonCardContent >
         <IonButton routerLink="/indications" onClick={() => setList(enigmas_list)}>Commencer</IonButton>
-
+        </IonCardContent>
+        </IonContent>
       </IonContent>
+
 
     </IonPage>
   );
