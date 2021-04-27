@@ -28,8 +28,8 @@ const Buzzer: React.FC = () => {
        	  </IonToolbar>
 
 
-      <IonContent class="ion-text-center" color="secondary"  >
-        <br />
+      <IonContent  color="secondary"  >
+ 
 
         <IonCardContent >
           <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" >Team 1</IonButton>
@@ -41,8 +41,8 @@ const Buzzer: React.FC = () => {
         <IonButton color="tertiary" > Timer </IonButton>
       </IonToolbar>
 
-      <IonContent class="ion-text-center" color="warning">
-      <br />
+      <IonContent  color="warning">
+
         <IonCardContent >
           <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary"   > Team 2  </IonButton>
         </IonCardContent>
