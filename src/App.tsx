@@ -53,9 +53,6 @@ const App: React.FC = () => (
           <Enigma />
         </Route>
 
-        <Route exact path="/indications">
-          <Indications />
-        </Route>
         <Route exact path="/buzzer">
           <Buzzer />
         </Route>

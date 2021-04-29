@@ -1,10 +1,10 @@
 import {
   IonContent, IonHeader, IonPage,
-  IonTitle, IonToolbar, IonButton
+  IonTitle, IonToolbar, IonButton, IonModal
 } from '@ionic/react';
-import { useState } from 'react';
-import { useEnigmaState } from "../hooks/EnigmaType";
-
+import Indications from './enigma/Indications';
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import './Enigma.css';
 import enigmas_data from "../res/enigmas.json";
 
@@ -13,16 +13,27 @@ const Enigma: React.FC = () => {
   // Declare parameters for enigmas picking
   const nb_enigmas = 5;
   // Pick a list of random enigmas from `enigmas` object
-  let enigmas_list = enigmas_data.sort(() => 0.5 - Math.random()).slice(0, nb_enigmas)
+  let enigmas_list = enigmas_data.sort(() => 0.5 - Math.random()).slice(0, nb_enigmas);
 
-  const { enigmas, setList } = useEnigmaState();
+  const [showIndications, setShowIndications] = useState(false);
+  const [showIndications2, setShowIndications2] = useState(false);
+
+  async function closeIndications() {
+    await setShowIndications(false);
+    await setShowIndications2(true);
+  }
+  async function closeIndications2() {
+    await setShowIndications(false);
+  }
+
+  let history = useHistory();
 
   return (
     <IonPage>
 
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Indications</IonTitle>
+          <IonTitle>Loading...</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -31,7 +42,41 @@ const Enigma: React.FC = () => {
         <h1>La partie est créée !</h1>
 
         <p>Passez le téléphone à la première équipe.</p>
-        <IonButton routerLink="/indications" onClick={() => setList(enigmas_list)}>Commencer</IonButton>
+        <IonButton onClick={() => {setShowIndications(true)}}>Commencer</IonButton>
+
+        <IonButton onClick={e => {
+          e.preventDefault();
+          //history.push("/buzzer");
+        }}>Next</IonButton>
+
+        {
+          showIndications &&
+          <Indications
+            enigma1={enigmas_list[0]}
+            enigma2={enigmas_list[1]}
+            closeAction={closeIndications}
+          />
+        }
+
+        {
+          showIndications2 &&
+          <Indications
+            enigma1={enigmas_list[2]}
+            enigma2={enigmas_list[3]}
+            closeAction={closeIndications2}
+          />
+        }
+
+        {
+          false &&
+          <IonModal isOpen={showIndications}>
+            <Indications
+              enigma1={enigmas_list[0]}
+              enigma2={enigmas_list[1]}
+              closeAction={closeIndications}
+            />
+          </IonModal>
+        }
 
       </IonContent>
 
