@@ -18,12 +18,17 @@ const Enigma: React.FC = () => {
   const [showIndications, setShowIndications] = useState(false);
   const [showIndications2, setShowIndications2] = useState(false);
 
-  async function closeIndications() {
-    await setShowIndications(false);
-    await setShowIndications2(true);
+  let etat = "créée";
+  function getEtat() {
+    return etat;
   }
-  async function closeIndications2() {
+
+  async function closeIndications(newEtat:boolean) {
     await setShowIndications(false);
+    await setShowIndications2(newEtat);
+  }
+  async function closeIndications2(newEtat:boolean) {
+    await setShowIndications2(false);
   }
 
   let history = useHistory();
@@ -39,7 +44,7 @@ const Enigma: React.FC = () => {
 
       <IonContent fullscreen>
 
-        <h1>La partie est créée !</h1>
+        <h1>La partie est {getEtat()} !</h1>
 
         <p>Passez le téléphone à la première équipe.</p>
         <IonButton onClick={() => {setShowIndications(true)}}>Commencer</IonButton>

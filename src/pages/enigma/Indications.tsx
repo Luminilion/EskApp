@@ -19,7 +19,7 @@ class Indications extends React.Component<IndicationsProps> {
       <>
         <p>{this.props.enigma1.cacher}</p>
 
-        <IonButton onClick={() => this.props.closeAction()}>Suivant</IonButton>
+        <IonButton onClick={() => this.props.closeAction(true)}>Suivant</IonButton>
       </>
     );
   }
