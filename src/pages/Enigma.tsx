@@ -10,28 +10,90 @@ import enigmas_data from "../res/enigmas.json";
 
 const Enigma: React.FC = () => {
 
-  // Declare parameters for enigmas picking
-  const nb_enigmas = 5;
+  // Pick total number of enigmas (multiple of 2)
+  const nb_enigmas = 6;
+  if (nb_enigmas%2 != 0) {
+    throw "Number of chosen enigmas is not a 2-multiple."
+  }
   // Pick a list of random enigmas from `enigmas` object
   let enigmas_list = enigmas_data.sort(() => 0.5 - Math.random()).slice(0, nb_enigmas);
 
-  const [showIndications, setShowIndications] = useState(false);
-  const [showIndications2, setShowIndications2] = useState(false);
+  // Generate display vars for all enigmas
+  // Enigma 1
+  const [showIndicationsA, setShowIndicationsA] = useState(true);
+  const [showIndicationsB, setShowIndicationsB] = useState(false);
+  const [showBuzzer, setShowBuzzer] = useState(false);
 
-  let etat = "créée";
-  function getEtat() {
-    return etat;
+  // Enigma 2
+  const [showIndicationsA2, setShowIndicationsA2] = useState(false);
+  const [showIndicationsB2, setShowIndicationsB2] = useState(false);
+  const [showBuzzer2, setShowBuzzer2] = useState(false);
+
+  // Enigma 3
+  const [showIndicationsA3, setShowIndicationsA3] = useState(false);
+  const [showIndicationsB3, setShowIndicationsB3] = useState(false);
+  const [showBuzzer3, setShowBuzzer3] = useState(false);
+
+  // Generate indices arrays
+  const results = new Array(nb_enigmas)
+  // Generate return functions
+  // Enigma 1 ------------------------------------------------------
+  // called when buzzer is timeout
+  function closeBuzzer() {
+    setShowBuzzer(false);
+    setShowIndicationsA2(true);
+    setTimeout(closeIndicationsA2, 1*60*1000); // 60'000 ms = 1 min
+  }
+  // called when indications 2 is done - opens Buzzer
+  function closeIndicationsB() {
+    setShowIndicationsB(false);
+    setShowBuzzer(true);
+    setTimeout(closeBuzzer, 10*60*1000); // 600'000 ms = 10 min
+  }
+  // called when indications 1 is done - opens indications 2
+  function closeIndicationsA() {
+    setShowIndicationsA(false);
+    setShowIndicationsB(true);
+    setTimeout(closeIndicationsB, 1*60*1000); // 60'000 ms = 1 min
+  }
+  // Enigma 2 ------------------------------------------------------
+  // called when buzzer is timeout
+  function closeBuzzer2() {
+    setShowBuzzer2(false);
+    setShowIndicationsA3(true);
+    setTimeout(closeIndicationsA3, 1*60*1000); // 60'000 ms = 1 min
+  }
+  // called when indications 2 is done - opens Buzzer
+  function closeIndicationsB2() {
+    setShowIndicationsB2(false);
+    setShowBuzzer2(true);
+    setTimeout(closeBuzzer2, 10*60*1000); // 600'000 ms = 10 min
+  }
+  // called when indications 1 is done - opens indications 2
+  function closeIndicationsA2() {
+    setShowIndicationsA2(false);
+    setShowIndicationsB2(true);
+    setTimeout(closeIndicationsB2, 1*60*1000); // 60'000 ms = 1 min
+  }
+  // Enigma 3 ------------------------------------------------------
+  // called when buzzer is timeout
+  function closeBuzzer3() {
+    setShowBuzzer3(false);
+  }
+  // called when indications 2 is done - opens Buzzer
+  function closeIndicationsB3() {
+    setShowIndicationsB3(false);
+    setShowBuzzer3(true);
+    setTimeout(closeBuzzer3, 10*60*1000); // 600'000 ms = 10 min
+  }
+  // called when indications 1 is done - opens indications 2
+  function closeIndicationsA3() {
+    setShowIndicationsA3(false);
+    setShowIndicationsB3(true);
+    setTimeout(closeIndicationsB3, 1*60*1000); // 60'000 ms = 1 min
   }
 
-  async function closeIndications(newEtat:boolean) {
-    await setShowIndications(false);
-    await setShowIndications2(newEtat);
-  }
-  async function closeIndications2(newEtat:boolean) {
-    await setShowIndications2(false);
-  }
-
-  let history = useHistory();
+  setTimeout(closeIndicationsA, 1*60*1000) // 60'000 ms = 1 min
 
   return (
     <IonPage>
@@ -44,43 +106,58 @@ const Enigma: React.FC = () => {
 
       <IonContent fullscreen>
 
-        <h1>La partie est {getEtat()} !</h1>
-
-        <p>Passez le téléphone à la première équipe.</p>
-        <IonButton onClick={() => {setShowIndications(true)}}>Commencer</IonButton>
-
-        <IonButton onClick={e => {
-          e.preventDefault();
-          //history.push("/buzzer");
-        }}>Next</IonButton>
-
         {
-          showIndications &&
+          showIndicationsA &&
           <Indications
             enigma1={enigmas_list[0]}
             enigma2={enigmas_list[1]}
-            closeAction={closeIndications}
+            closeAction={() => {}}
           />
         }
 
         {
-          showIndications2 &&
+          showIndicationsB &&
+          <Indications
+            enigma1={enigmas_list[1]}
+            enigma2={enigmas_list[3]}
+            closeAction={() => {}}
+          />
+        }
+
+        {
+          showIndicationsA2 &&
           <Indications
             enigma1={enigmas_list[2]}
-            enigma2={enigmas_list[3]}
-            closeAction={closeIndications2}
+            enigma2={enigmas_list[1]}
+            closeAction={() => {}}
           />
         }
 
         {
-          false &&
-          <IonModal isOpen={showIndications}>
-            <Indications
-              enigma1={enigmas_list[0]}
-              enigma2={enigmas_list[1]}
-              closeAction={closeIndications}
-            />
-          </IonModal>
+          showIndicationsB2 &&
+          <Indications
+            enigma1={enigmas_list[3]}
+            enigma2={enigmas_list[1]}
+            closeAction={() => {}}
+          />
+        }
+
+        {
+          showIndicationsA3 &&
+          <Indications
+            enigma1={enigmas_list[4]}
+            enigma2={enigmas_list[1]}
+            closeAction={() => {}}
+          />
+        }
+
+        {
+          showIndicationsB3 &&
+          <Indications
+            enigma1={enigmas_list[5]}
+            enigma2={enigmas_list[1]}
+            closeAction={() => {}}
+          />
         }
 
       </IonContent>
