@@ -1,0 +1,15 @@
+.title{
+
+    vertical-align: center;
+    text-align: center;
+    color: rgb(12, 27, 236);
+  
+    
+}
+
+p{
+    text-align: center;
+    position: relative;
+    top: 30px;
+    font-size: 15pt;
+}

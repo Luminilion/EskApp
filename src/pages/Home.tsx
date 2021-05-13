@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           <IonTitle color="primary" >
             EsKApp
 
-		  </IonTitle>
+		      </IonTitle>
 
           <br />
 
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
             jeu EsKit
 
 
-		  </IonTitle>
+		      </IonTitle>
           <br />
           <br />
           <img src={logo} height="70" width="150" />
@@ -50,10 +50,10 @@ const Home: React.FC = () => {
           </IonCardHeader>
           <br />
           <IonCardContent >
-            <IonButton class="round" color="secondary">Une partie (enveloppe)</IonButton>
+            <IonButton expand="block" color="secondary">Une partie (enveloppe)</IonButton>
           </IonCardContent>
           <IonCardContent >
-            <IonButton class="round"  color="tertiary"  routerLink="/enigma" >Une nouvelle partie  </IonButton>
+            <IonButton expand="block" color="tertiary"  routerLink="/enigma" >Une nouvelle partie  </IonButton>
           </IonCardContent>
         </IonCard>
       </IonContent>

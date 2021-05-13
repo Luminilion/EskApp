@@ -73,6 +73,9 @@ const App: React.FC = () => (
         <Route exact path="/joueursAttribution1">
           <JoueursAttribution1 />
         </Route>
+        <Route exact path="/endgame">
+          <Endgame />
+        </Route>
 
       </IonRouterOutlet>
     </IonReactRouter>

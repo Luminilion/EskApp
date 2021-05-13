@@ -32,7 +32,7 @@ const Enigma: React.FC = () => {
       <IonContent fullscreen>
 
 
-        <h1>La partie est créée !</h1>
+        <h1 className= "title">La partie est créée !</h1>
 
         <p>Passez le téléphone à la première équipe.</p>
         <br /> 

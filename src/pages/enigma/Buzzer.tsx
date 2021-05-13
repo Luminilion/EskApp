@@ -24,8 +24,8 @@ const Buzzer: React.FC = () => {
       </IonHeader>
 
       <IonToolbar class="ion-text-center" >
-        Press your team button if you found the solution
-       	  </IonToolbar>
+        Si vous pensez avoir la rèponse appuyer sur votre buzzer:
+      </IonToolbar>
 
 
       <IonContent  color="secondary"  >
@@ -43,9 +43,12 @@ const Buzzer: React.FC = () => {
 
       <IonContent  color="warning">
 
-        <IonCardContent >
-          <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary"   > Team 2  </IonButton>
+        
+      <IonCardContent >
+          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" >Team 2</IonButton>
         </IonCardContent>
+
+
       </IonContent>
 
     </IonApp>

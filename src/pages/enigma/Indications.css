@@ -1,0 +1,27 @@
+.chrono_element{
+    position: relative;
+    top: 70pt;
+}
+
+
+.equipe{
+    vertical-align: middle;
+    text-align: center;
+
+    color: rgba(0, 42, 97, 0.918);
+
+
+}
+
+
+
+.gauche{
+    position: relative;
+    left: 20pt;
+    font-size: 11pt;
+    margin-left: 5pt;
+    color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serifs;
+    
+}

@@ -2,5 +2,7 @@
     width: 370px;
 
     height: 190px;
+    position: relative;
+    align-items: center;
 
   }
