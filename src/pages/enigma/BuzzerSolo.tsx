@@ -19,14 +19,20 @@ const BuzzerSolo: React.FC = () => {
      <IonContent  color="secondary"  >
  
 
- <IonCardContent >
-   <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" >Team 1</IonButton>
+ <IonCardContent class="ion-text-center">
+ <br />
+        <br />
+        <br />
+        <br />
+   <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse">Team </IonButton>
  </IonCardContent>
 
 </IonContent>
 
 <IonToolbar class="ion-text-center">
- <IonButton color="tertiary" > Timer </IonButton>
+<br />
+        <br />
+ <IonButton color="tertiary" routerLink="/endGame"> A la fin du temps appuyez sur ce bouton </IonButton>
 </IonToolbar>
 
 <IonContent   color="warning">

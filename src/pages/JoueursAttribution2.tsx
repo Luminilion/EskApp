@@ -4,7 +4,7 @@ import logo from '../img/logo.png';
 
 let user_names = ['Tintin', 'Haddock', 'Calculus', 'Alcazar', 'Sonwy', 'Tapioca', 'Wolf', 'Muller' ]
 
-const JoueursAttribution1: React.FC = () => {
+const JoueursAttribution2: React.FC = () => {
   return (
     <IonPage >
 
@@ -12,7 +12,7 @@ const JoueursAttribution1: React.FC = () => {
         <IonToolbar>
           <div>
         <img src={logo} height="50" width="150" /> 
-        <IonTitle class="ion-text-center" >Groupe 1</IonTitle>
+        <IonTitle class="ion-text-center" >Groupe 2</IonTitle>
         </div>
         </IonToolbar>
       </IonHeader>
@@ -21,7 +21,7 @@ const JoueursAttribution1: React.FC = () => {
       
         <br />
         <br />
-        Le groupe 1 sera constitué des joueurs suivants.
+        Le groupe 2 sera constitué des joueurs suivants.
         <br />
         <br />
         <br />
@@ -61,10 +61,10 @@ const JoueursAttribution1: React.FC = () => {
 </IonGrid>
 
 <IonCardContent class="ion-text-center" >
-   <IonButton color="success" routerLink="/JoueursAttribution2"> Groupe suivant </IonButton >
+   <IonButton color="success" routerLink="/indications"> On commence le jeu! </IonButton >
    </IonCardContent>
     </IonPage>
   );
 };
 
-export default JoueursAttribution1;
+export default JoueursAttribution2;

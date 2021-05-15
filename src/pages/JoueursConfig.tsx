@@ -35,7 +35,7 @@ const JoueursConfig: React.FC = () => {
         <br />
         <br />
         <br />
-        <IonButton class="roundJoueur"  shape="round" color="tertiary" >Generer le jeu</IonButton>
+        <IonButton class="roundJoueur"  shape="round" color="tertiary" routerLink="/JoueursAttribution1">Generer le jeu</IonButton>
 
       </IonContent>
 

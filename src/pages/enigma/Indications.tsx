@@ -7,6 +7,14 @@ import chrono_1_min from '../../img/chrono_1_min.jpg'
 
 const Indications: React.FC = () => {
 
+  /*
+        <div className = "chrono_element">
+            <img src={chrono_1_min} alt="chrono" height="70" width="70" />
+       </div>
+
+        <h1 className ="equipe">Première équipe</h1>
+  */
+
   const { enigmas, setList } = useEnigmaState();
 
   // Preparing display of chosen enigmas
@@ -32,24 +40,40 @@ const Indications: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
+      <IonContent class="ion-text-center" >
 
-        <h1 className ="equipe">Première équipe</h1>
+      <br />
+       <br />
+       <br />
 
-        Ici apparaissent les indications de chaque énigme
+        Ouvrez votre enveloppe 
         <ul>{display_enigmas}</ul>
         
 
 
 
-      <div className = "chrono_element">
-            <img src={chrono_1_min} alt="chrono" height="70" width="70" />
-       </div>
-       <p className ="gauche">Vous avez une minute pour mettre  <br></br>en place les éléments de l'énigme</p>
-      </IonContent>
-      <IonContent>
 
-      <IonButton shape="round" expand="full" color="primary">Suivant</IonButton>
+       <p >Vous avez une minute pour mettre  <br></br>en place les éléments de l'énigme</p>
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+
+      </IonContent>
+      <IonContent class="ion-text-center">
+      <br />
+      <br />
+      <br />
+
+      <IonButton shape="round"  color="primary" routerLink="/indications">equipe suivante </IonButton>
+      </IonContent>
+
+      <IonContent class="ion-text-center">
+
+      <IonButton shape="round"  color="success" routerLink="/buzzer">On commence l'enigme! </IonButton>
       </IonContent>
 
     </IonPage>

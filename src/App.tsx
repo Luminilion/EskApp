@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Enigma from './pages/Enigma'
 import JoueursConfig from './pages/JoueursConfig';
 import JoueursAttribution1 from './pages/JoueursAttribution1';
+import JoueursAttribution2 from './pages/JoueursAttribution2';
 import Indications from './pages/enigma/Indications';
 import Buzzer from './pages/enigma/Buzzer';
 import BuzzerSolo from './pages/enigma/BuzzerSolo';
@@ -61,7 +62,7 @@ const App: React.FC = () => (
         <Route exact path="/buzzer">
           <Buzzer />
         </Route>
-        <Route exact path="/buzzer_solo">
+        <Route exact path="/buzzerSolo">
           <BuzzerSolo />
         </Route>
         <Route exact path="/reponse">
@@ -72,6 +73,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/joueursAttribution1">
           <JoueursAttribution1 />
+        </Route>
+        <Route exact path="/joueursAttribution2">
+          <JoueursAttribution2 />
         </Route>
         <Route exact path="/endgame">
           <Endgame />

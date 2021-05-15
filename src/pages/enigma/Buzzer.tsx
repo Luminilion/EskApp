@@ -32,20 +32,20 @@ const Buzzer: React.FC = () => {
  
 
         <IonCardContent >
-          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" >Team 1</IonButton>
+          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse">Team 1</IonButton>
         </IonCardContent>
 
       </IonContent>
 
       <IonToolbar class="ion-text-center">
-        <IonButton color="tertiary" > Timer </IonButton>
+        <IonButton color="tertiary" routerLink="/endGame"> apres une minute clickez sur ce bouton  </IonButton>
       </IonToolbar>
 
       <IonContent  color="warning">
 
         
       <IonCardContent >
-          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" >Team 2</IonButton>
+          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse">Team 2</IonButton>
         </IonCardContent>
 
 

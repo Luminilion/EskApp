@@ -32,11 +32,16 @@ const Endgame: React.FC = () => {
 
 
 
-      <IonContent >  {/*   Secondary color for the bleu team */}
+      <IonContent class="ion-text-center">  {/*   Secondary color for the bleu team */}
 
       <IonCardContent > 
-          <IonButton class="roundBuzzer"size="large" shape="round" color="secondary" >Retour au Menu</IonButton>
+          <IonButton class="roundBuzzer"size="large" shape="round" color="warning" routerLink="/indications">Nouvelle enigme</IonButton>
       </IonCardContent>
+
+      <IonCardContent > 
+          <IonButton class="roundBuzzer"size="large" shape="round" color="secondary" routerLink="/home">Retour au Menu</IonButton>
+      </IonCardContent>
+
 
       </IonContent>
       
