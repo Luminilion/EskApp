@@ -34,7 +34,7 @@ const Buzzer: React.FC = () => {
  
 
         <IonCardContent >
-          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse">Team 1</IonButton>
+          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse_1">Team 1</IonButton>
         </IonCardContent>
 
       </IonContent>
@@ -48,7 +48,7 @@ const Buzzer: React.FC = () => {
 
         
       <IonCardContent >
-          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse">Team 2</IonButton>
+          <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse_2">Team 2</IonButton>
         </IonCardContent>
 
 

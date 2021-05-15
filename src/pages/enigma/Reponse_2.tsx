@@ -66,7 +66,7 @@ const Reponse: React.FC = () => {
     //setResponse("Bravo, c'est la bonne reponse!")
     setResponse("Bravo, c'est la bonne reponse!")
     setColor("success")
-    setLink("/buzzerSolo")
+    setLink("/buzzerSolo_2")
   }
     else {
     
@@ -98,7 +98,7 @@ const Reponse: React.FC = () => {
 
       <IonContent class="ion-text-center"  >
       
-   
+        La seconde équipe doit saisir sa réponse : 
         <br />
         <br />
         <IonInput  value={text}  placeholder="votre reponse ..." onIonChange={e => setText(e.detail.value!)} clearInput></IonInput>

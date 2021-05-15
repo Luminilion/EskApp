@@ -18,7 +18,7 @@
     
 
     text-align: center;
-    color: red;
+    color: rgb(105, 0, 0);
     font-size: 30pt;
     font-style: bold;
 
@@ -26,5 +26,8 @@
 .roundBuzzer{
   vertical-align: middle;
   align-items: center;
+  width: 360px;
+
+  height: 200px;
   
 }
