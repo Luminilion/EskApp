@@ -42,7 +42,7 @@ const Indications: React.FC = () => {
 
       <IonContent class="ion-text-center" >
 
-      <br />
+       <br />
        <br />
        <br />
 

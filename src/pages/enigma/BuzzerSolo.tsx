@@ -4,7 +4,9 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
   IonButton} from '@ionic/react';
 import './BuzzerSolo.css';
 import logo from '../../img/logo.png';
+import CountDownTimer from './CountDownTimer';
 
+const hoursMinSecs = {hours:0, minutes: 1, seconds: 0}
 
 const BuzzerSolo: React.FC = () => {
   return (
@@ -32,7 +34,7 @@ const BuzzerSolo: React.FC = () => {
 <IonToolbar class="ion-text-center">
 <br />
         <br />
- <IonButton color="tertiary" routerLink="/endGame"> A la fin du temps appuyez sur ce bouton </IonButton>
+ <IonButton color="tertiary" routerLink="/endGame">  <CountDownTimer hoursMinSecs={hoursMinSecs}/> </IonButton>
 </IonToolbar>
 
 <IonContent   color="warning">

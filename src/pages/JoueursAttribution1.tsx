@@ -18,44 +18,37 @@ const JoueursAttribution1: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen class="ion-text-center">
+    
+        <p>Le groupe 1 sera constitué des joueurs suivants.</p>
+       
       
-        <br />
-        <br />
-        Le groupe 1 sera constitué des joueurs suivants.
-        <br />
-        <br />
-        <br />
-      
-        SVP suivez l'ordre, prenez que les n premiers noms si vous etes n joueurs
-        <br />
-        <br />
-        <br />
-        <br />
-        Choisissez votre personnage!
+        <p>SVP suivez l'ordre, prenez que les n <br></br> premiers noms si vous etes n joueurs</p>
+       
+        <p>Choisissez votre personnage!</p>
 
       </IonContent>
 
       <IonGrid class="paddingGrid" >
   <IonRow >
     <IonCol >
-    <IonButton class ="roundName"   icon-only>  1. {user_names[1]} </IonButton >
+    <IonButton class ="roundName"   icon-only>  1. {user_names[0]} </IonButton >
     </IonCol>
     <IonCol  >
-    <IonButton class ="roundName" icon-only>  2. {user_names[2]} </IonButton >
+    <IonButton class ="roundName" icon-only>  2. {user_names[1]} </IonButton >
     </IonCol>
     <IonCol >
-    <IonButton class ="roundName" icon-only>  3. {user_names[3]} </IonButton >
+    <IonButton class ="roundName" icon-only>  3. {user_names[2]} </IonButton >
     </IonCol>
   </IonRow>
   <IonRow>
     <IonCol >
-    <IonButton class ="roundName" icon-only>  4. {user_names[4]} </IonButton >
+    <IonButton class ="roundName" icon-only>  4. {user_names[3]} </IonButton >
     </IonCol>
     <IonCol >
-    <IonButton class ="roundName" icon-only>  5. {user_names[5]} </IonButton >
+    <IonButton class ="roundName" icon-only>  5. {user_names[4]} </IonButton >
     </IonCol>
     <IonCol >
-    <IonButton class ="roundName" icon-only>  6. {user_names[6]} </IonButton >
+    <IonButton class ="roundName" icon-only>  6. {user_names[5]} </IonButton >
     </IonCol>
   </IonRow>
 </IonGrid>

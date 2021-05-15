@@ -9,8 +9,10 @@ import {
   IonButton
 } from '@ionic/react';
 import './Buzzer.css';
+import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
 
+const hoursMinSecs = {hours:0, minutes: 10, seconds: 0}
 
 const Buzzer: React.FC = () => {
   return (
@@ -24,7 +26,7 @@ const Buzzer: React.FC = () => {
       </IonHeader>
 
       <IonToolbar class="ion-text-center" >
-        Si vous pensez avoir la rèponse appuyer sur votre buzzer:
+       <p>Si vous pensez avoir la rèponse  appuyer sur votre buzzer:</p> 
       </IonToolbar>
 
 
@@ -38,7 +40,8 @@ const Buzzer: React.FC = () => {
       </IonContent>
 
       <IonToolbar class="ion-text-center">
-        <IonButton color="tertiary" routerLink="/endGame"> apres une minute clickez sur ce bouton  </IonButton>
+        <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs}/>  </IonButton>
+        
       </IonToolbar>
 
       <IonContent  color="warning">

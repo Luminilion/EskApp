@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage,IonCardContent, IonTitle, IonToolbar, Io
 import './JoueursAttribution1.css';
 import logo from '../img/logo.png';
 
-let user_names = ['Tintin', 'Haddock', 'Calculus', 'Alcazar', 'Sonwy', 'Tapioca', 'Wolf', 'Muller' ]
+let user_names = ['Malkov', 'Luigi', 'Sparrow', 'Jude', 'Reagan', 'Wolf', 'Emery', 'Muller' ]
 
 const JoueursAttribution2: React.FC = () => {
   return (
@@ -19,19 +19,12 @@ const JoueursAttribution2: React.FC = () => {
 
       <IonContent fullscreen class="ion-text-center">
       
-        <br />
-        <br />
-        Le groupe 2 sera constitué des joueurs suivants.
-        <br />
-        <br />
-        <br />
-      
-        SVP suivez l'ordre, prenez que les n premiers noms si vous etes n joueurs
-        <br />
-        <br />
-        <br />
-        <br />
-        Choisissez votre personnage!
+
+       
+        <p>Le groupe 2 sera constitué des joueurs suivants. </p>
+        
+       <p>SVP suivez l'ordre, prenez que les n <br></br> premiers noms si vous etes n joueurs</p> 
+        <p>Choisissez votre personnage!</p> 
 
       </IonContent>
 

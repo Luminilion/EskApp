@@ -13,7 +13,10 @@
 
 }
 
-
+ion-button {
+    --color: rgb(237, 238, 245);
+    --background: #211ef3;
+}
 
 .gauche{
     position: relative;
