@@ -24,38 +24,34 @@ const Home: React.FC = () => {
 
       <IonContent class="ion-text-center">
         <IonCard>
+
           <IonTitle color="primary" >
             EsKApp
-
-		      </IonTitle>
-
-          <br />
-
-          <IonTitle color="secondary" >
-
-            L'application officielle du
-			   <IonRow > </IonRow>
-            jeu EsKit
-
-
-		      </IonTitle>
-          <br />
-          <br />
-          <img src={logo} height="70" width="150" />
-          <IonCardHeader>
             <br />
-            <IonCardTitle >
-              A quoi voulez-vous jouer ?
-              </IonCardTitle>
-          </IonCardHeader>
+            L'application officielle du <br /> jeu EsKit
+            <br />
+            <br />
+            <img src={logo} height="70" width="150" />
+          </IonTitle>
+
           <br />
+          <br />
+
+          <IonCardTitle >
+            A quoi voulez-vous jouer ?
+          </IonCardTitle>
+
+          <br />
+          <br />
+
           <IonCardContent >
             <IonButton expand="block" color="secondary">Une partie (enveloppe)</IonButton>
+            <br />
+            <IonButton expand="block" color="tertiary" routerLink="joueursAttribution1">Une nouvelle partie  </IonButton>
           </IonCardContent>
-          <IonCardContent >
-            <IonButton expand="block" color="tertiary"  routerLink="/joueursAttribution1" >Une nouvelle partie  </IonButton>
-          </IonCardContent>
+          
         </IonCard>
+
       </IonContent>
     </IonPage>
   );

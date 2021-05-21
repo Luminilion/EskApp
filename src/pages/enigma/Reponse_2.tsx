@@ -10,7 +10,7 @@ import {
   IonButton
 } from '@ionic/react';
 import './Reponse.css';
-import { useState, FormEvent} from 'react';
+import { useState, FormEvent } from 'react';
 import logo from '../../img/logo.png';
 
 
@@ -18,7 +18,7 @@ import logo from '../../img/logo.png';
 
 const Reponse: React.FC = () => {
 
-  
+
   /*var state = { name: '', phone: '', email: '', hint: '' };
 
   let handleChange = (name, value) => {
@@ -33,9 +33,9 @@ const Reponse: React.FC = () => {
   };
 
   let check = (text: string) => {
-    if (state.value == text) 
+    if (state.value == text)
       {
-      
+
       return {response : "Bravo, c'est la bonne reponse!"}
     }
     else{
@@ -54,28 +54,27 @@ const Reponse: React.FC = () => {
   let check = () => {
 
 
-    if ( !text) {
-     //setResponse("Oups, mauvaise reponse!")
-     setResponse("On attend votre reponse")
-     setColor("warning")
-     setLink("/buzzer")
+    if (!text) {
+      //setResponse("Oups, mauvaise reponse!")
+      setResponse("On attend votre reponse")
+      setColor("warning")
+      setLink("/buzzer")
     }
-    else  if ( text == 'hello') 
-    {
-    
-    //setResponse("Bravo, c'est la bonne reponse!")
-    setResponse("Bravo, c'est la bonne reponse!")
-    setColor("success")
-    setLink("/buzzerSolo_2")
-  }
+    else if (text == 'hello') {
+
+      //setResponse("Bravo, c'est la bonne reponse!")
+      setResponse("Bravo, c'est la bonne reponse!")
+      setColor("success")
+      setLink("/buzzerSolo_2")
+    }
     else {
-    
-        setResponse("Oups, mauvaise reponse!")
-        setColor("danger")
-        setLink("/buzzer")
-    
+
+      setResponse("Oups, mauvaise reponse!")
+      setColor("danger")
+      setLink("/buzzer")
+
     }
-   
+
   };
 
 
@@ -97,22 +96,22 @@ const Reponse: React.FC = () => {
       </IonToolbar>
 
       <IonContent class="ion-text-center"  >
-      
-        La seconde équipe doit saisir sa réponse : 
+
+        La seconde équipe doit saisir sa réponse :
         <br />
         <br />
-        <IonInput  value={text}  placeholder="votre reponse ..." onIonChange={e => setText(e.detail.value!)} clearInput></IonInput>
+        <IonInput value={text} placeholder="votre reponse ..." onIonChange={e => setText(e.detail.value!)} clearInput></IonInput>
 
       </IonContent>
 
       <IonContent class="ion-text-center"  >
-        <IonButton 
-        color="primary" 
-        
-        onClick={ () => check() }
-      >
-        { "verifier la reponse"}
-      </IonButton>
+        <IonButton
+          color="primary"
+
+          onClick={() => check()}
+        >
+          {"verifier la reponse"}
+        </IonButton>
       </IonContent>
 
 
@@ -121,20 +120,20 @@ const Reponse: React.FC = () => {
       <IonContent class="ion-text-center" >
 
         <IonCardContent >
-        
-          <IonButton shape="round" color={color} > { response} </IonButton>
-         
+
+          <IonButton shape="round" color={color} > {response} </IonButton>
+
         </IonCardContent>
       </IonContent>
 
       <IonContent class="ion-text-center"  >
-        <IonButton 
-        color="primary" 
-        
-        routerLink={link}
-      >
-        { "next"}
-      </IonButton>
+        <IonButton
+          color="primary"
+
+          routerLink={link}
+        >
+          {"next"}
+        </IonButton>
       </IonContent>
 
     </IonApp>

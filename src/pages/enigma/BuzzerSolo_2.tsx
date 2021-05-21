@@ -1,12 +1,14 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
+import {
+  IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
   IonApp,
   IonCardContent,
-  IonButton} from '@ionic/react';
+  IonButton
+} from '@ionic/react';
 import './BuzzerSolo.css';
 import logo from '../../img/logo.png';
 import CountDownTimer from './CountDownTimer';
 
-const hoursMinSecs = {hours:0, minutes: 1, seconds: 0}
+const hoursMinSecs = { hours: 0, minutes: 1, seconds: 0 }
 
 const BuzzerSolo: React.FC = () => {
   return (
@@ -18,33 +20,33 @@ const BuzzerSolo: React.FC = () => {
           <IonTitle>BuzzerSolo</IonTitle>
         </IonToolbar>
       </IonHeader>
-     <IonContent  color="secondary"  >
- 
+      <IonContent color="secondary"  >
 
- <IonCardContent class="ion-text-center">
-   <IonButton class="roundBuzzer"size="large" shape="round" color="tertiary" routerLink="/reponse_1">Team 1 </IonButton>
- </IonCardContent>
 
-</IonContent>
+        <IonCardContent class="ion-text-center">
+          <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" routerLink="/reponse_1">Team 1 </IonButton>
+        </IonCardContent>
 
-<IonToolbar class="ion-text-center">
-<br />
+      </IonContent>
+
+      <IonToolbar class="ion-text-center">
         <br />
- <IonButton color="tertiary" routerLink="/endGame">  <CountDownTimer hoursMinSecs={hoursMinSecs}/> </IonButton>
-</IonToolbar>
+        <br />
+        <IonButton color="tertiary" routerLink="/endGame">  <CountDownTimer hoursMinSecs={hoursMinSecs} /> </IonButton>
+      </IonToolbar>
 
-<IonContent   color="warning">
-  <h1 className="congrats">Bravo ! </h1>
-  <div className="text">
-      Vous avez trouvé l'indice !   
+      <IonContent color="warning">
+        <h1 className="congrats">Bravo ! </h1>
+        <div className="text">
+          Vous avez trouvé l'indice !
   </div>
-  <div className="text">
-      L'équipe adverse n'a plus beaucoup de temps
+        <div className="text">
+          L'équipe adverse n'a plus beaucoup de temps
   </div>
-</IonContent>     
-      
-    
-</IonPage>
+      </IonContent>
+
+
+    </IonPage>
   );
 };
 

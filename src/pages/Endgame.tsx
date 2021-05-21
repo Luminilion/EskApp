@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonCardContent, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent, IonButton } from '@ionic/react';
 import './Endgame.css';
 import logo from '../img/logo.png';
 
@@ -9,16 +9,16 @@ const Endgame: React.FC = () => {
       <IonHeader>
         <img src={logo} height="50" width="150" />
         <IonToolbar >
-          
+
 
           <IonTitle class="ion-text-center">Fin de la partie</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      
 
 
-<IonContent color="warning">  {/*   Secondary color for the bleu team */}
+
+      <IonContent color="warning">  {/*   Secondary color for the bleu team */}
         <br></br>
         <br></br>
         <br></br>
@@ -34,21 +34,21 @@ const Endgame: React.FC = () => {
 
       <IonContent class="ion-text-center">  {/*   Secondary color for the bleu team */}
 
-      <IonCardContent > 
-          <IonButton class="roundBuzzer"size="large" shape="round" color="warning" routerLink="/indications">Nouvelle enigme</IonButton>
-      </IonCardContent>
+        <IonCardContent >
+          <IonButton class="roundBuzzer" size="large" shape="round" color="warning" routerLink="/indications">Nouvelle enigme</IonButton>
+        </IonCardContent>
 
-      <IonCardContent > 
-          <IonButton class="roundBuzzer"size="large" shape="round" color="secondary" routerLink="/home">Retour au Menu</IonButton>
-      </IonCardContent>
+        <IonCardContent >
+          <IonButton class="roundBuzzer" size="large" shape="round" color="secondary" routerLink="/home">Retour au Menu</IonButton>
+        </IonCardContent>
 
 
       </IonContent>
-      
 
 
 
-      
+
+
 
     </IonPage>
   );

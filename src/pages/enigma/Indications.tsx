@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonButton } from '@ionic/react';
-import {star} from 'ionicons/icons'
+import { star } from 'ionicons/icons'
 import './Indications.css';
 import { useEnigmaState } from "../../hooks/EnigmaType";
 import logo from '../../img/logo.png';
@@ -35,45 +35,35 @@ const Indications: React.FC = () => {
 
       <IonHeader>
         <IonToolbar>
-        <img src={logo} height="50" width="150" />
-          <IonTitle  class="ion-text-center">Configuration</IonTitle>
+          <img src={logo} height="50" width="150" />
+          <IonTitle class="ion-text-center">Configuration</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent class="ion-text-center" >
-
-       <br />
-       <br />
-       <br />
-
-        Ouvrez votre enveloppe 
+        <br />
+        <br />
+        <br />
+        Ouvrez votre enveloppe
         <ul>{display_enigmas}</ul>
-        
-
-
-
-
-       <p >Vous avez une minute pour mettre  <br></br>en place les éléments de l'énigme</p>
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-
+        <p >Vous avez une minute pour mettre  <br></br>en place les éléments de l'énigme</p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </IonContent>
       <IonContent class="ion-text-center">
-      <br />
-      <br />
-      <br />
-
-      <IonButton shape="round"  color="primary" routerLink="/indications">equipe suivante </IonButton>
+        <br />
+        <br />
+        <br />
+        <IonButton shape="round" color="primary" routerLink="/indications">equipe suivante </IonButton>
       </IonContent>
 
       <IonContent class="ion-text-center">
-
-      <IonButton shape="round"  color="success" routerLink="/buzzer">On commence l'enigme! </IonButton>
+        <IonButton shape="round" color="success" routerLink="/buzzer">On commence l'enigme! </IonButton>
       </IonContent>
 
     </IonPage>
