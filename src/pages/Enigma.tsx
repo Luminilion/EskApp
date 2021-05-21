@@ -3,6 +3,7 @@ import {
   IonTitle, IonToolbar, IonButton, IonModal
 } from '@ionic/react';
 import Indications from './enigma/Indications';
+import Buzzer from "./enigma/Buzzer";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import './Enigma.css';
@@ -37,44 +38,6 @@ const Enigma: React.FC = () => {
   // Generate indices arrays
   const results = new Array(nb_enigmas)
   // Generate return functions
-  // Enigma 1 ------------------------------------------------------
-  // called when buzzer is timeout
-  function closeBuzzer() {
-    setShowBuzzer(false);
-    setShowIndicationsA2(true);
-    setTimeout(closeIndicationsA2, 1*60*1000); // 60'000 ms = 1 min
-  }
-  // called when indications 2 is done - opens Buzzer
-  function closeIndicationsB() {
-    setShowIndicationsB(false);
-    setShowBuzzer(true);
-    setTimeout(closeBuzzer, 10*60*1000); // 600'000 ms = 10 min
-  }
-  // called when indications 1 is done - opens indications 2
-  function closeIndicationsA() {
-    setShowIndicationsA(false);
-    setShowIndicationsB(true);
-    setTimeout(closeIndicationsB, 1*60*1000); // 60'000 ms = 1 min
-  }
-  // Enigma 2 ------------------------------------------------------
-  // called when buzzer is timeout
-  function closeBuzzer2() {
-    setShowBuzzer2(false);
-    setShowIndicationsA3(true);
-    setTimeout(closeIndicationsA3, 1*60*1000); // 60'000 ms = 1 min
-  }
-  // called when indications 2 is done - opens Buzzer
-  function closeIndicationsB2() {
-    setShowIndicationsB2(false);
-    setShowBuzzer2(true);
-    setTimeout(closeBuzzer2, 10*60*1000); // 600'000 ms = 10 min
-  }
-  // called when indications 1 is done - opens indications 2
-  function closeIndicationsA2() {
-    setShowIndicationsA2(false);
-    setShowIndicationsB2(true);
-    setTimeout(closeIndicationsB2, 1*60*1000); // 60'000 ms = 1 min
-  }
   // Enigma 3 ------------------------------------------------------
   // called when buzzer is timeout
   function closeBuzzer3() {
@@ -84,16 +47,54 @@ const Enigma: React.FC = () => {
   function closeIndicationsB3() {
     setShowIndicationsB3(false);
     setShowBuzzer3(true);
-    setTimeout(closeBuzzer3, 10*60*1000); // 600'000 ms = 10 min
+    setTimeout(closeBuzzer3, 1*10*1000); // 600'000 ms = 10 min
   }
   // called when indications 1 is done - opens indications 2
   function closeIndicationsA3() {
     setShowIndicationsA3(false);
     setShowIndicationsB3(true);
-    setTimeout(closeIndicationsB3, 1*60*1000); // 60'000 ms = 1 min
+    setTimeout(closeIndicationsB3, 1*10*1000); // 60'000 ms = 1 min
   }
-
-  setTimeout(closeIndicationsA, 1*60*1000) // 60'000 ms = 1 min
+  // Enigma 2 ------------------------------------------------------
+  // called when buzzer is timeout
+  function closeBuzzer2() {
+    setShowBuzzer2(false);
+    setShowIndicationsA3(true);
+    setTimeout(closeIndicationsA3, 1*10*1000); // 60'000 ms = 1 min
+  }
+  // called when indications 2 is done - opens Buzzer
+  function closeIndicationsB2() {
+    setShowIndicationsB2(false);
+    setShowBuzzer2(true);
+    setTimeout(closeBuzzer2, 1*10*1000); // 600'000 ms = 10 min
+  }
+  // called when indications 1 is done - opens indications 2
+  function closeIndicationsA2() {
+    setShowIndicationsA2(false);
+    setShowIndicationsB2(true);
+    setTimeout(closeIndicationsB2, 1*10*1000); // 60'000 ms = 1 min
+  }
+  // Enigma 1 ------------------------------------------------------
+  // called when buzzer is timeout
+  function closeBuzzer() {
+    setShowBuzzer(false);
+    setShowIndicationsA2(true);
+    setTimeout(closeIndicationsA2, 1*10*1000); // 60'000 ms = 1 min
+  }
+  // called when indications 2 is done - opens Buzzer
+  function closeIndicationsB() {
+    setShowIndicationsB(false);
+    setShowBuzzer(true);
+    setTimeout(closeBuzzer, 1*10*1000); // 600'000 ms = 10 min
+  }
+  // called when indications 1 is done - opens indications 2
+  function closeIndicationsA() {
+    setShowIndicationsA(false);
+    setShowIndicationsB(true);
+    setTimeout(closeIndicationsB, 1*10*1000); // 60'000 ms = 1 min
+  }
+  
+  setTimeout(closeIndicationsA, 1*10*1000) // 60'000 ms = 1 min
 
   return (
     <IonPage>
@@ -125,6 +126,13 @@ const Enigma: React.FC = () => {
         }
 
         {
+          showBuzzer &&
+          <Buzzer
+
+          />
+        }
+
+        {
           showIndicationsA2 &&
           <Indications
             enigma1={enigmas_list[2]}
@@ -143,6 +151,13 @@ const Enigma: React.FC = () => {
         }
 
         {
+          showBuzzer2 &&
+          <Buzzer
+
+          />
+        }
+
+        {
           showIndicationsA3 &&
           <Indications
             enigma1={enigmas_list[4]}
@@ -157,6 +172,13 @@ const Enigma: React.FC = () => {
             enigma1={enigmas_list[5]}
             enigma2={enigmas_list[1]}
             closeAction={() => {}}
+          />
+        }
+
+        {
+          showBuzzer3 &&
+          <Buzzer
+
           />
         }
 
