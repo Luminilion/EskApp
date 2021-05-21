@@ -13,10 +13,15 @@ import {
 } from '@ionic/react';
 import './JoueursAttribution1.css';
 import logo from '../img/logo.png';
+import { useHistory, useLocation } from "react-router";
 
 let user_names = ['Tintin', 'Haddock', 'Calculus', 'Alcazar', 'Sonwy', 'Tapioca', 'Wolf', 'Muller']
 
 const JoueursAttribution1: React.FC = () => {
+
+  const location = useLocation();
+  const history = useHistory();
+
   return (
     <IonPage >
 
@@ -33,6 +38,7 @@ const JoueursAttribution1: React.FC = () => {
         <p>Le groupe 1 sera constitué des joueurs suivants.</p>
         <p>SVP suivez l'ordre, prenez que les n <br></br> premiers noms si vous etes n joueurs</p>
         <p>Choisissez votre personnage!</p>
+        <p>{location.info}</p>
       </IonContent>
 
       <IonGrid class="paddingGrid" >
@@ -61,7 +67,7 @@ const JoueursAttribution1: React.FC = () => {
       </IonGrid>
 
       <IonCardContent class="ion-text-center" >
-        <IonButton color="success" routerLink="/JoueursAttribution2"> Groupe suivant </IonButton >
+        <IonButton color="success" onClick={() => { history.push({ pathname: '/joueursAttribution2' }) }}> Groupe suivant </IonButton >
       </IonCardContent>
     </IonPage>
   );

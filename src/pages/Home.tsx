@@ -16,9 +16,12 @@ import {
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import logo from '../img/logo.png';
-
+import { useHistory } from "react-router";
 
 const Home: React.FC = () => {
+
+  const history = useHistory();
+
   return (
     <IonPage>
 
@@ -47,9 +50,8 @@ const Home: React.FC = () => {
           <IonCardContent >
             <IonButton expand="block" color="secondary">Une partie (enveloppe)</IonButton>
             <br />
-            <IonButton expand="block" color="tertiary" routerLink="joueursAttribution1">Une nouvelle partie  </IonButton>
+            <IonButton expand="block" color="tertiary" onClick={() => history.push({ pathname: '/joueursAttribution1', info: 'hello' })}>Une nouvelle partie  </IonButton>
           </IonCardContent>
-          
         </IonCard>
 
       </IonContent>
