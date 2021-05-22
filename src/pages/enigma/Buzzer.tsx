@@ -26,33 +26,20 @@ const Buzzer: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonToolbar class="ion-text-center" >
+      <div class="ion-text-center" >
         <p>Si vous pensez avoir la rèponse  appuyer sur votre buzzer:</p>
-      </IonToolbar>
+      </div>
 
-
-      <IonContent color="secondary"  >
-
-
-        <IonCardContent >
-          <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" routerLink="/reponse_1">Team 1</IonButton>
-        </IonCardContent>
-
+      <IonContent color="secondary" >
+        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" routerLink="/reponse_1">Team 1</IonButton>
       </IonContent>
 
-      <IonToolbar class="ion-text-center">
+      <div class="ion-text-center">
         <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs} />  </IonButton>
-
-      </IonToolbar>
+      </div>
 
       <IonContent color="warning">
-
-
-        <IonCardContent >
-          <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" routerLink="/reponse_2">Team 2</IonButton>
-        </IonCardContent>
-
-
+        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" routerLink="/reponse_2">Team 2</IonButton>
       </IonContent>
 
     </IonPage>

@@ -21,7 +21,7 @@ const Enigma: React.FC = () => {
   function startRound() {
     history.replace({
       pathname: '/indications',
-      team: 1
+      team: 1,
     })
   }
 

@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import NumberOfPlayers from './pages/NumberOfPlayers';
 import Enigma from './pages/Enigma'
 import JoueursAttribution1 from './pages/JoueursAttribution1';
-import JoueursAttribution2 from './pages/JoueursAttribution2';
 import Indications from './pages/enigma/Indications';
 import Buzzer from './pages/enigma/Buzzer';
 import BuzzerSolo1 from './pages/enigma/BuzzerSolo_1';
@@ -81,9 +80,6 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/joueursAttribution1">
           <JoueursAttribution1 />
-        </Route>
-        <Route exact path="/joueursAttribution2">
-          <JoueursAttribution2 />
         </Route>
         <Route exact path="/endgame">
           <Endgame />
