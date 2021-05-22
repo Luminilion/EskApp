@@ -11,6 +11,7 @@ import {
   IonInput
 } from '@ionic/react';
 import './Buzzer.css';
+import './BuzzerSolo.css';
 import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
 import { useState } from 'react';
