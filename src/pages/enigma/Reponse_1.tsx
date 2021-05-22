@@ -13,38 +13,7 @@ import './Reponse.css';
 import { useState, FormEvent } from 'react';
 import logo from '../../img/logo.png';
 
-
-
-
 const Reponse1: React.FC = () => {
-
-
-  /*var state = { name: '', phone: '', email: '', hint: '' };
-
-  let handleChange = (name, value) => {
-    this.setState({...this.state, [name]: value});
-  };
-
-  const [input, setInput] = useState('')
-
-  var state = {
-    value: "correct",
-    response: "On attend la reponse ...",
-  };
-
-  let check = (text: string) => {
-    if (state.value == text)
-      {
-
-      return {response : "Bravo, c'est la bonne reponse!"}
-    }
-    else{
-      return {response : "Oups, mauvaise reponse!"}
-    }
-    return state;
-  };
-
-*/
 
   const [text, setText] = useState<string>();
   const [response, setResponse] = useState<string>("On attend votre reponse");
