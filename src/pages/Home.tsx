@@ -22,6 +22,13 @@ const Home: React.FC = () => {
 
   const history = useHistory();
 
+  function startGame() {
+    history.push({
+      pathname: '/numberOfPlayers',
+      team: '1'
+    })
+  }
+
   return (
     <IonPage>
 
@@ -48,9 +55,7 @@ const Home: React.FC = () => {
           <br />
 
           <IonCardContent >
-            <IonButton expand="block" color="secondary">Une partie (enveloppe)</IonButton>
-            <br />
-            <IonButton expand="block" color="tertiary" onClick={() => history.push({ pathname: '/joueursAttribution1', info: 'hello' })}>Une nouvelle partie  </IonButton>
+            <IonButton expand="block" color="tertiary" onClick={startGame}>Démarrer</IonButton>
           </IonCardContent>
         </IonCard>
 

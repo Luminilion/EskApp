@@ -1,0 +1,63 @@
+import {
+  IonApp,
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonRow,
+  IonPage,
+  IonInput,
+} from '@ionic/react';
+import ExploreContainer from '../components/ExploreContainer';
+import './Home.css';
+import logo from '../img/logo.png';
+import { useHistory, useLocation } from "react-router";
+import { useState } from 'react';
+
+const NumberOfPlayers: React.FC = () => {
+
+  const history = useHistory();
+  const location = useLocation();
+  const [nbPlayers, setNbPlayers] = useState<int>(0);
+
+  function addPlayer() {
+    if (nbPlayers < 8) {
+      setNbPlayers(nbPlayers + 1)
+    }
+  }
+
+  function removePlayer() {
+    if (nbPlayers > 0) {
+      setNbPlayers(nbPlayers - 1)
+    }
+  }
+
+  function nextConfig() {
+    history.push({
+      pathname: '/joueursAttribution1',
+      nbPlayers: nbPlayers,
+      team: location.team,
+    })
+  }
+
+  return (
+    <IonPage>
+      <IonContent>
+        <IonTitle>Group {location.team}</IonTitle>
+        <p>Set the number of players on your team:</p>
+        <IonInput value={nbPlayers} readonly></IonInput>
+        <IonButton onClick={addPlayer}>+</IonButton>
+        <IonButton onClick={removePlayer}>-</IonButton>
+        <IonButton onClick={nextConfig}>Next</IonButton>
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default NumberOfPlayers;

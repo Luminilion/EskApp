@@ -29,13 +29,13 @@ const JoueursAttribution1: React.FC = () => {
         <IonToolbar>
           <div>
             <img src={logo} height="50" width="150" />
-            <IonTitle class="ion-text-center" >Groupe 1</IonTitle>
+            <IonTitle class="ion-text-center" >Groupe {location.team}</IonTitle>
           </div>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen class="ion-text-center">
-        <p>Le groupe 1 sera constitué des joueurs suivants.</p>
+        <p>Votre groupe sera constitué des joueurs suivants.</p>
         <p>SVP suivez l'ordre, prenez que les n <br></br> premiers noms si vous etes n joueurs</p>
         <p>Choisissez votre personnage!</p>
         <p>{location.info}</p>
