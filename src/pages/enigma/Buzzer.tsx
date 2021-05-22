@@ -12,11 +12,12 @@ import './Buzzer.css';
 import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
 
-const hoursMinSecs = { hours: 0, minutes: 10, seconds: 0 }
-
 const Buzzer: React.FC = () => {
+
+  const hoursMinSecs = { hours: 0, minutes: 10, seconds: 0 }
+
   return (
-    <IonApp>
+    <IonPage>
 
       <IonHeader  >
         <IonToolbar>
@@ -54,7 +55,7 @@ const Buzzer: React.FC = () => {
 
       </IonContent>
 
-    </IonApp>
+    </IonPage>
   );
 };
 
