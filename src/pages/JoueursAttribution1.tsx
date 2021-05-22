@@ -31,7 +31,7 @@ const JoueursAttribution1: React.FC = () => {
       })
     } else {
       history.replace({
-        pathname: '/indications',
+        pathname: '/enigma',
 
       })
     }

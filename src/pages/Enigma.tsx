@@ -3,8 +3,7 @@ import {
   IonTitle, IonToolbar, IonButton, IonCardContent,
 } from '@ionic/react';
 import { useState } from 'react';
-import { useEnigmaState } from "../hooks/EnigmaType";
-
+import { useHistory } from 'react-router';
 import './Enigma.css';
 import enigmas_data from "../res/enigmas.json";
 import logo from '../img/logo.png';
@@ -12,12 +11,19 @@ import logo from '../img/logo.png';
 
 const Enigma: React.FC = () => {
 
+  const history = useHistory();
+
   // Declare parameters for enigmas picking
   const nb_enigmas = 5;
   // Pick a list of random enigmas from `enigmas` object
   let enigmas_list = enigmas_data.sort(() => 0.5 - Math.random()).slice(0, nb_enigmas)
 
-  const { enigmas, setList } = useEnigmaState();
+  function startRound() {
+    history.replace({
+      pathname: '/indications',
+      team: 1
+    })
+  }
 
   return (
     <IonPage>
@@ -30,20 +36,16 @@ const Enigma: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
-
-
         <h1 className="title">La partie est créée !</h1>
-
         <p>Passez le téléphone à la première équipe.</p>
         <br />
         <br />
         <IonContent class="ion-text-center" >
           <IonCardContent >
-            <IonButton routerLink="/indications" onClick={() => setList(enigmas_list)}>Commencer</IonButton>
+            <IonButton routerLink="/indications">Commencer</IonButton>
           </IonCardContent>
         </IonContent>
       </IonContent>
-
 
     </IonPage>
   );
