@@ -77,7 +77,7 @@ const Reponse1: React.FC = () => {
 
 
   return (
-    <IonApp>
+    <IonPage>
 
       <IonHeader  >
         <IonToolbar>
@@ -133,7 +133,7 @@ const Reponse1: React.FC = () => {
         </IonButton>
       </IonContent>
 
-    </IonApp>
+    </IonPage>
   );
 };
 

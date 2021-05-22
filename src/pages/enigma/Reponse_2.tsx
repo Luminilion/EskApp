@@ -80,7 +80,7 @@ const Reponse: React.FC = () => {
 
 
   return (
-    <IonApp>
+    <IonPage>
 
       <IonHeader  >
         <IonToolbar>
@@ -136,7 +136,7 @@ const Reponse: React.FC = () => {
         </IonButton>
       </IonContent>
 
-    </IonApp>
+    </IonPage>
   );
 };
 
