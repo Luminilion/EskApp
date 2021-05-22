@@ -79,57 +79,36 @@ const Reponse1: React.FC = () => {
   return (
     <IonPage>
 
-      <IonHeader  >
+      <IonHeader>
         <IonToolbar>
           <img src={logo} height="50" width="150" />
-          <IonTitle class="ion-text-center"> Reponse</IonTitle>
+          <IonTitle class="ion-text-center">Reponse</IonTitle>
+          <br />
+          <br />
+          <br />
         </IonToolbar>
       </IonHeader>
 
-      <IonToolbar class="ion-text-center" >
+      <IonContent class="ion-text-center">
         <br />
-
-
-      </IonToolbar>
-
-      <IonContent class="ion-text-center"  >
         La première équipe doit saisir sa réponse :
-
         <br />
         <br />
-        <IonInput value={text} placeholder="votre reponse ..." onIonChange={e => setText(e.detail.value!)} clearInput></IonInput>
-
-      </IonContent>
-
-      <IonContent class="ion-text-center"  >
-        <IonButton
-          color="primary"
-
-          onClick={() => check()}
-        >
+        <IonInput value={text} placeholder="Votre reponse ..." onIonChange={e => setText(e.detail.value!)} clearInput></IonInput>
+        <br />
+        <br />
+        <IonButton color="primary" onClick={() => check()}>
           {"verifier la reponse"}
         </IonButton>
-      </IonContent>
-
-
-
-
-      <IonContent class="ion-text-center" >
-
-        <IonCardContent >
-
-          <IonButton shape="round" color={color} > {response} </IonButton>
-
-        </IonCardContent>
-      </IonContent>
-
-      <IonContent class="ion-text-center"  >
-        <IonButton
-          color="primary"
-
-          routerLink={link}
-        >
-          {"next"}
+        <br />
+        <br />
+        <br />
+        <IonButton shape="round" color={color} disabled> {response} </IonButton>
+        <br />
+        <br />
+        <br />
+        <IonButton color="primary" routerLink={link}>
+          Next
         </IonButton>
       </IonContent>
 

@@ -11,10 +11,13 @@ import {
 import './Buzzer.css';
 import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
+import {useState} from 'react';
 
 const Buzzer: React.FC = () => {
 
   const hoursMinSecs = { hours: 0, minutes: 10, seconds: 0 }
+  const [reussite1, setRe1] = useState<boolean>(false);
+  const [reussite2, setRe2] = useState<boolean>(false);
 
   return (
     <IonPage>
