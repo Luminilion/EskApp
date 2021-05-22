@@ -7,7 +7,6 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import NumberOfPlayers from './pages/NumberOfPlayers';
 import Enigma from './pages/Enigma'
-import JoueursConfig from './pages/JoueursConfig';
 import JoueursAttribution1 from './pages/JoueursAttribution1';
 import JoueursAttribution2 from './pages/JoueursAttribution2';
 import Indications from './pages/enigma/Indications';
@@ -77,17 +76,14 @@ const App: React.FC = () => (
         <Route exact path="/reponse_2">
           <Reponse2/>
         </Route>
-        <Route exact path="/joueursConfig">
-          <JoueursConfig />
+        <Route exact path='/numberOfPlayers'>
+          <NumberOfPlayers />
         </Route>
         <Route exact path="/joueursAttribution1">
           <JoueursAttribution1 />
         </Route>
         <Route exact path="/joueursAttribution2">
           <JoueursAttribution2 />
-        </Route>
-        <Route exact path='/numberOfPlayers'>
-          <NumberOfPlayers />
         </Route>
         <Route exact path="/endgame">
           <Endgame />
