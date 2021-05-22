@@ -4,6 +4,7 @@ import './Indications.css';
 import { useEnigmaState } from "../../hooks/EnigmaType";
 import logo from '../../img/logo.png';
 import chrono_1_min from '../../img/chrono_1_min.jpg'
+import {useHistory, useLocation} from 'react-router';
 
 const Indications: React.FC = () => {
 
@@ -15,20 +16,22 @@ const Indications: React.FC = () => {
         <h1 className ="equipe">Première équipe</h1>
   */
 
-  const { enigmas, setList } = useEnigmaState();
+  const history = useHistory();
+  const location = useLocation();
 
-  // Preparing display of chosen enigmas
-  const display_enigmas = enigmas.map(id => (
-    <li>
-      Il vous faut cacher les éléments suivants : <ol>
-        {id.cacher.map(e => (<li>{e}</li>))}
-      </ol>
-      Indications : <ol>
-        {id.indications.map(i => (<li>{i}</li>))}
-      </ol>
-      <br />
-    </li>
-  ));
+  function nextIndic() {
+    let nextTeam = +location.team+1;
+    if (nextTeam <=2 ) {
+      history.replace({
+        pathname: '/indications',
+        team: nextTeam,
+      })
+    } else {
+      history.replace({
+        pathname : '/buzzer'
+      })
+    }
+  }
 
   return (
     <IonPage>
@@ -43,10 +46,11 @@ const Indications: React.FC = () => {
       <IonContent class="ion-text-center" >
         <br />
         <br />
+        Equipe {location.team}
         <br />
         Ouvrez votre enveloppe
-        <ul>{display_enigmas}</ul>
-        <p >Vous avez une minute pour mettre  <br></br>en place les éléments de l'énigme</p>
+        <p>Vous avez une minute pour mettre  <br />
+        en place les éléments de l'énigme</p>
         <br />
         <br />
         <br />
@@ -59,11 +63,7 @@ const Indications: React.FC = () => {
         <br />
         <br />
         <br />
-        <IonButton shape="round" color="primary" routerLink="/indications">equipe suivante </IonButton>
-      </IonContent>
-
-      <IonContent class="ion-text-center">
-        <IonButton shape="round" color="success" routerLink="/buzzer">On commence l'enigme! </IonButton>
+        <IonButton shape="round" color="primary" onClick={nextIndic}>Fini !</IonButton>
       </IonContent>
 
     </IonPage>

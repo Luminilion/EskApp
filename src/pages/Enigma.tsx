@@ -42,7 +42,7 @@ const Enigma: React.FC = () => {
         <br />
         <IonContent class="ion-text-center" >
           <IonCardContent >
-            <IonButton routerLink="/indications">Commencer</IonButton>
+            <IonButton onClick={startRound}>Commencer</IonButton>
           </IonCardContent>
         </IonContent>
       </IonContent>
