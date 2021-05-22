@@ -39,7 +39,7 @@ const NumberOfPlayers: React.FC = () => {
   }
 
   function nextConfig() {
-    history.push({
+    history.replace({
       pathname: '/joueursAttribution1',
       nbPlayers: nbPlayers,
       team: location.team,

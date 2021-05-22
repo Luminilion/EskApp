@@ -22,6 +22,21 @@ const JoueursAttribution1: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
 
+  function nextConfig() {
+    let nextTeam = +location.team+1;
+    if (nextTeam<3) {
+      history.replace({
+        pathname: '/numberOfPlayers',
+        team: (nextTeam as string),
+      })
+    } else {
+      history.replace({
+        pathname: '/indications',
+
+      })
+    }
+  }
+
   return (
     <IonPage >
 
@@ -67,7 +82,7 @@ const JoueursAttribution1: React.FC = () => {
       </IonGrid>
 
       <IonCardContent class="ion-text-center" >
-        <IonButton color="success" onClick={() => { history.push({ pathname: '/joueursAttribution2' }) }}> Groupe suivant </IonButton >
+        <IonButton color="success" onClick={nextConfig}> Groupe suivant </IonButton >
       </IonCardContent>
     </IonPage>
   );
