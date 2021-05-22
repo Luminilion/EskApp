@@ -29,7 +29,8 @@ const Buzzer: React.FC = () => {
   const col_correct = "success";
 
   // Defines timer
-  const hoursMinSecs = { hours: 0, minutes: 10, seconds: 0 }
+  const hoursMinSecs= { hours: 0, minutes: 10, seconds: 0 };
+  //const hoursMinSecs = { hours: 0, minutes: 10, seconds: 0 }
   // Defines team state
   let [reussite1, setRe1] = useState<boolean>(false);
   let [reussite2, setRe2] = useState<boolean>(false);
@@ -51,7 +52,6 @@ const Buzzer: React.FC = () => {
   let [isBuzzer1, setIsBuzzer1] = useState<boolean>(true);
   let [isBuzzer2, setIsBuzzer2] = useState<boolean>(true);
 
-
   // function called when modal is opened
   function checkAnswer(team: int, answer: string) {
     let found = false;
@@ -65,7 +65,7 @@ const Buzzer: React.FC = () => {
       setResponse(rep_correct);
     } else {
       setEndAction(action_back);
-      setColor("warning");
+      setColor(col_attente);
       setResponse(rep_attente);
     }
     setTeamNumber(team);
@@ -132,7 +132,7 @@ const Buzzer: React.FC = () => {
       </IonContent> }
 
       <div class="ion-text-center">
-        <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs} />  </IonButton>
+        <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs}/>  </IonButton>
       </div>
 
       {isBuzzer2 &&

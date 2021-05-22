@@ -2,14 +2,15 @@ import React from 'react'
 
 // Main export i.e. Timer function
 const CountDownTimer = ({
-  hoursMinSecs // dict of hours, minutes and seconds
+  hoursMinSecs // object containing hours, minutes and seconds
 }) => {
 
-  // Params fething or default attribution
+
+  // Params fetching and type declaration
   const {
-    hours = 0,
-      minutes = 0,
-      seconds = 60
+    hours= 0,
+    minutes = 0,
+    seconds = 0
   } = hoursMinSecs;
 
   // Creating state for each of the counter's variables
