@@ -2,9 +2,10 @@ import React from 'react'
 
 // Main export i.e. Timer function
 const CountDownTimer = ({
-  hoursMinSecs // object containing hours, minutes and seconds
+  hoursMinSecs, // object containing hours, minutes and seconds
+  oneWin,
+  registerOneWin
 }) => {
-
 
   // Params fetching and type declaration
   const {
@@ -39,6 +40,13 @@ const CountDownTimer = ({
   React.useEffect(() => {
     const timerId = setInterval(() => tick(), 1000);
     return () => clearInterval(timerId);
+  });
+
+  React.useEffect(() => {
+    if (oneWin) {
+      setTime([0, 1, 0])
+      registerOneWin(false);
+    }
   });
 
   return ( <

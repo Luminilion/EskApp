@@ -34,6 +34,8 @@ const Buzzer: React.FC = () => {
   // Defines team state
   let [reussite1, setRe1] = useState<boolean>(false);
   let [reussite2, setRe2] = useState<boolean>(false);
+  // defines winner state
+  let [oneWin, setOneWin] = useState<boolean>(false);
   // Defines answer submission
   let [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -79,9 +81,11 @@ const Buzzer: React.FC = () => {
       if (team === 1) {
         setRe1(true);
         setIsBuzzer1(false);
+        setOneWin(true);
       } else {
         setRe2(true);
         setIsBuzzer2(false);
+        setOneWin(true);
       }
     }
     setOpenModal(false);
@@ -103,6 +107,11 @@ const Buzzer: React.FC = () => {
       setColor(col_faux)
     }
   };
+
+  // function to execute on end of both teams or end of timer
+  function endRound() {
+    
+  }
 
   return (
     <IonPage>
@@ -132,7 +141,7 @@ const Buzzer: React.FC = () => {
       </IonContent> }
 
       <div class="ion-text-center">
-        <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs}/>  </IonButton>
+        <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs} oneWin={oneWin} registerOneWin={setOneWin}/>  </IonButton>
       </div>
 
       {isBuzzer2 &&
