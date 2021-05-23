@@ -25,10 +25,12 @@ const Indications: React.FC = () => {
       history.replace({
         pathname: '/indications',
         team: nextTeam,
+        roundsLeft: location.roundsLeft
       })
     } else {
       history.replace({
-        pathname : '/buzzer'
+        pathname : '/buzzer',
+        roundsLeft: location.roundsLeft
       })
     }
   }

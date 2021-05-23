@@ -7,6 +7,7 @@ import { useHistory } from 'react-router';
 import './Enigma.css';
 import enigmas_data from "../res/enigmas.json";
 import logo from '../img/logo.png';
+import {nb_rounds } from '../res/constants';
 
 
 const Enigma: React.FC = () => {
@@ -25,6 +26,7 @@ const Enigma: React.FC = () => {
     history.replace({
       pathname: '/indications',
       team: 1,
+      roundsLeft:nb_rounds
     })
   }
 

@@ -15,11 +15,12 @@ import './BuzzerSolo.css';
 import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
 import { useState, useEffect } from 'react';
-import { useHistory} from 'react-router';
+import { useHistory, useLocation} from 'react-router';
 
 const Buzzer: React.FC = () => {
 
   const history = useHistory();
+  const location = useLocation();
 
   // Modal reactions
   const rep_attente = "On attend votre réponse";
@@ -120,11 +121,19 @@ const Buzzer: React.FC = () => {
     if (reussite2 == true) {
       results = results.concat("Equipe 2");
     }
-    console.log(results);
-    history.replace({
-      pathname: '/endround',
-      results: results,
-    })
+    let roundsLeft = location.roundsLeft-1;
+    if (roundsLeft >0) {
+      history.replace({
+        pathname: '/endround',
+        results: results,
+        roundsLeft: roundsLeft
+      })
+    } else {
+      history.replace({
+        pathname: '/endgame',
+        results: results
+      })
+    }
   }
 
   // called when reussite1 or reussite2 changes state

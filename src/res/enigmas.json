@@ -1,132 +1,20 @@
 [
 	{
-		"cacher": [
-			"puzzle1",
-			"QR code"
-		],
-		"indications": [
-			"Eparpillez les cases du puzzle.",
-			"Eparpillez les QR codes."
-		],
-		"indices": [
-			"Chercher des petits objets."
-		]
-	},
-
-	{
-		"cacher": [
-			"cadenas2",
-			"roue"
-		],
-		"indications": [
-			"Configurez le cadenas sur 1234"
-		],
-		"indices": [
-			"Un objet et une énigme débloqueront la situation."
-		]
+		"answer":"hello"
 	},
 	{
-		"cacher": [
-			"puzzle3",
-			"QR code"
-		],
-		"indications": [
-			"Eparpillez les cases du puzzle.",
-			"Eparpillez les QR codes."
-		],
-		"indices": [
-			"Chercher des petits objets."
-		]
-	},
-
-	{
-		"cacher": [
-			"cadenas4",
-			"roue"
-		],
-		"indications": [
-			"Configurez le cadenas sur 1234"
-		],
-		"indices": [
-			"Un objet et une énigme débloqueront la situation."
-		]
+		"answer":"world"
 	},
 	{
-		"cacher": [
-			"puzzle5",
-			"QR code"
-		],
-		"indications": [
-			"Eparpillez les cases du puzzle.",
-			"Eparpillez les QR codes."
-		],
-		"indices": [
-			"Chercher des petits objets."
-		]
-	},
-
-	{
-		"cacher": [
-			"cadenas6",
-			"roue"
-		],
-		"indications": [
-			"Configurez le cadenas sur 1234"
-		],
-		"indices": [
-			"Un objet et une énigme débloqueront la situation."
-		]
+		"answer":"bye"
 	},
 	{
-		"cacher": [
-			"puzzle7",
-			"QR code"
-		],
-		"indications": [
-			"Eparpillez les cases du puzzle.",
-			"Eparpillez les QR codes."
-		],
-		"indices": [
-			"Chercher des petits objets."
-		]
-	},
-
-	{
-		"cacher": [
-			"cadenas8",
-			"roue"
-		],
-		"indications": [
-			"Configurez le cadenas sur 1234"
-		],
-		"indices": [
-			"Un objet et une énigme débloqueront la situation."
-		]
+		"answer":"planet"
 	},
 	{
-		"cacher": [
-			"puzzle9",
-			"QR code"
-		],
-		"indications": [
-			"Eparpillez les cases du puzzle.",
-			"Eparpillez les QR codes."
-		],
-		"indices": [
-			"Chercher des petits objets."
-		]
+		"answer":"again"
 	},
-
 	{
-		"cacher": [
-			"cadenas10",
-			"roue"
-		],
-		"indications": [
-			"Configurez le cadenas sur 1234"
-		],
-		"indices": [
-			"Un objet et une énigme débloqueront la situation."
-		]
+		"answer":"hello"
 	}
 ]

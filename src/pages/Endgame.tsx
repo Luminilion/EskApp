@@ -23,7 +23,7 @@ const Endgame: React.FC = () => {
         <br></br>
         <br></br>
         <br></br>
-        <div className="hello" >C'est la seconde équipe <br></br>qui a gagné !</div>   {/*logic pour équipe bleu */}
+        <div className="hello" >C'est la seconde équipe <br></br>qui a gagnée !</div>   {/*logic pour équipe bleu */}
         <div className="hello" > Bravo à tous ! </div>
       </IonContent>
 
@@ -33,10 +33,6 @@ const Endgame: React.FC = () => {
 
 
       <IonContent class="ion-text-center">  {/*   Secondary color for the bleu team */}
-
-        <IonCardContent >
-          <IonButton class="roundBuzzer" size="large" shape="round" color="warning" routerLink="/indications">Nouvelle enigme</IonButton>
-        </IonCardContent>
 
         <IonCardContent >
           <IonButton class="roundBuzzer" size="large" shape="round" color="secondary" routerLink="/home">Retour au Menu</IonButton>
