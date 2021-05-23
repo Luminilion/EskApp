@@ -14,6 +14,7 @@ import {
 import './JoueursAttribution1.css';
 import logo from '../img/logo.png';
 import { useHistory, useLocation } from "react-router";
+import {equipe1, equipe2} from '../res/joueurs';
 
 let user_names = ['Tintin', 'Haddock', 'Calculus', 'Alcazar', 'Sonwy', 'Tapioca', 'Wolf', 'Muller']
 
@@ -22,12 +23,22 @@ const JoueursAttribution1: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
 
+  // load players names
+  let equipe = [];
+  if (location.team === 1) {
+    equipe = equipe1;
+  } else {
+    equipe = equipe2;
+  }
+  // shuffle players names
+  equipe = equipe.sort(() => 0.5 - Math.random());
+
   function nextConfig() {
     let nextTeam = +location.team+1;
     if (nextTeam<3) {
       history.replace({
         pathname: '/numberOfPlayers',
-        team: (nextTeam as string),
+        team: nextTeam,
       })
     } else {
       history.replace({

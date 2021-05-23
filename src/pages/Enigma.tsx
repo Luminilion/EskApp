@@ -18,6 +18,9 @@ const Enigma: React.FC = () => {
   // Pick a list of random enigmas from `enigmas` object
   let enigmas_list = enigmas_data.sort(() => 0.5 - Math.random()).slice(0, nb_enigmas)
 
+  // Load the enigmas
+  enigmas_list = enigmas_data
+
   function startRound() {
     history.replace({
       pathname: '/indications',

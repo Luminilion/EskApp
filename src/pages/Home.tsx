@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   function startGame() {
     history.push({
       pathname: '/numberOfPlayers',
-      team: '1'
+      team: 1
     })
   }
 
