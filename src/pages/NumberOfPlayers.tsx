@@ -24,16 +24,16 @@ const NumberOfPlayers: React.FC = () => {
 
   const history = useHistory();
   const location = useLocation();
-  const [nbPlayers, setNbPlayers] = useState<int>(0);
+  const [nbPlayers, setNbPlayers] = useState<int>(1);
 
   function addPlayer() {
-    if (nbPlayers < 8) {
+    if (nbPlayers < 9) {
       setNbPlayers(nbPlayers + 1)
     }
   }
 
   function removePlayer() {
-    if (nbPlayers > 0) {
+    if (nbPlayers > 1) {
       setNbPlayers(nbPlayers - 1)
     }
   }

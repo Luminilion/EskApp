@@ -145,7 +145,6 @@ const Buzzer: React.FC = () => {
       </IonHeader>
 
       <div class="ion-text-center" >
-        {+reussite1}, {+reussite2}
         <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer:</p>
       </div>
 
