@@ -16,6 +16,8 @@ import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
 import { useState, useEffect } from 'react';
 import { useHistory, useLocation} from 'react-router';
+import enigmas from '../../res/enigmas';
+import {nb_rounds, nb_teams } from '../../res/constants';
 
 const Buzzer: React.FC = () => {
 
@@ -31,6 +33,10 @@ const Buzzer: React.FC = () => {
   const col_attente = "warning";
   const col_faux = "danger";
   const col_correct = "success";
+
+  // get correct answers
+  const answer1 = enigmas[nb_teams*(nb_rounds-location.roundsLeft)].answer;
+  const answer2 = enigmas[nb_teams*(nb_rounds-location.roundsLeft) + 1].answer;
 
   // Defines timer
   const hoursMinSecs= { hours: 0, minutes: 10, seconds: 0 };
@@ -154,12 +160,13 @@ const Buzzer: React.FC = () => {
       </IonHeader>
 
       <div class="ion-text-center" >
+        {enigmas.map(e => e.answer)} {location.roundsLeft} {answer1} {answer2}
         <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer:</p>
       </div>
 
       { isBuzzer1 &&
       <IonContent color="secondary" >
-        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(1, "hello") }}>Team 1</IonButton>
+        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(1, answer1) }}>Team 1</IonButton>
       </IonContent> }
 
       { !isBuzzer1 &&
@@ -181,7 +188,7 @@ const Buzzer: React.FC = () => {
 
       {isBuzzer2 &&
       <IonContent color="warning">
-        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(2, "world") }}>Team 2</IonButton>
+        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(2, answer2) }}>Team 2</IonButton>
       </IonContent> }
 
       { !isBuzzer2 &&

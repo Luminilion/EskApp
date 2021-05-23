@@ -16,8 +16,6 @@ import logo from '../img/logo.png';
 import { useHistory, useLocation } from "react-router";
 import {equipe1, equipe2} from '../res/joueurs';
 
-let user_names = ['Tintin', 'Haddock', 'Calculus', 'Alcazar', 'Sonwy', 'Tapioca', 'Wolf', 'Muller']
-
 const JoueursAttribution1: React.FC = () => {
 
   const location = useLocation();

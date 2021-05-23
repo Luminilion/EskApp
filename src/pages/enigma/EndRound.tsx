@@ -47,9 +47,9 @@ const EndRound: React.FC = () => {
 
       <IonContent class="ion-text-center">  {/*   Secondary color for the bleu team */}
 
-        <IonCardContent >
+        {(location.roundsLeft!==0) && <IonCardContent >
           <IonButton class="roundBuzzer" size="large" shape="round" color="warning" onClick={nextRound}>Prochaine énigme</IonButton>
-        </IonCardContent>
+        </IonCardContent>}
 
         <IonCardContent >
           <IonButton class="roundBuzzer" size="large" shape="round" color="secondary" onClick={backHome}>Retour au Menu</IonButton>
