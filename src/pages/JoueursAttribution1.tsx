@@ -23,6 +23,8 @@ const JoueursAttribution1: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
 
+  const nbPlayers = location.nbPlayers ? location.nbPlayers : 5;
+
   // load players names
   let equipe = [];
   if (location.team === 1) {
@@ -32,7 +34,10 @@ const JoueursAttribution1: React.FC = () => {
   }
   // shuffle players names
   equipe = equipe.sort(() => 0.5 - Math.random());
+  // select only matching number of names
+  equipe = equipe.slice(0, nbPlayers);
 
+  // function handling next page
   function nextConfig() {
     let nextTeam = +location.team+1;
     if (nextTeam<3) {
@@ -64,31 +69,40 @@ const JoueursAttribution1: React.FC = () => {
         <p>Votre groupe sera constitué des joueurs suivants.</p>
         <p>SVP suivez l'ordre, prenez que les n <br></br> premiers noms si vous etes n joueurs</p>
         <p>Choisissez votre personnage!</p>
-        <p>{location.info}</p>
       </IonContent>
-
       <IonGrid class="paddingGrid" >
         <IonRow >
-          <IonCol >
-            <IonButton class="roundName" icon-only>  1. {user_names[0]} </IonButton >
-          </IonCol>
-          <IonCol>
-            <IonButton class="roundName" icon-only>  2. {user_names[1]} </IonButton >
-          </IonCol>
-          <IonCol >
-            <IonButton class="roundName" icon-only>  3. {user_names[2]} </IonButton >
-          </IonCol>
+          {equipe[0] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[0]}</IonButton >
+          </IonCol>}
+          {equipe[1] && <IonCol>
+            <IonButton class="roundName" icon-only>{equipe[1]}</IonButton >
+          </IonCol>}
+          {equipe[2] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[2]}</IonButton >
+          </IonCol>}
         </IonRow>
         <IonRow>
-          <IonCol >
-            <IonButton class="roundName" icon-only>  4. {user_names[3]} </IonButton >
-          </IonCol>
-          <IonCol >
-            <IonButton class="roundName" icon-only>  5. {user_names[4]} </IonButton >
-          </IonCol>
-          <IonCol >
-            <IonButton class="roundName" icon-only>  6. {user_names[5]} </IonButton >
-          </IonCol>
+          {equipe[3] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[3]}</IonButton >
+          </IonCol>}
+          {equipe[4] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[4]}</IonButton >
+          </IonCol>}
+          {equipe[5] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[5]}</IonButton >
+          </IonCol>}
+        </IonRow>
+        <IonRow>
+          {equipe[6] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[6]} </IonButton >
+          </IonCol>}
+          {equipe[7] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[7]} </IonButton >
+          </IonCol>}
+          {equipe[8] && <IonCol >
+            <IonButton class="roundName" icon-only>{equipe[8]} </IonButton >
+          </IonCol>}
         </IonRow>
       </IonGrid>
 
