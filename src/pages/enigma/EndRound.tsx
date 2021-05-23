@@ -1,8 +1,18 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent, IonButton } from '@ionic/react';
 import '../Endgame.css';
 import logo from '../../img/logo.png';
+import {useHistory, useLocation} from 'react-router';
 
 const EndRound: React.FC = () => {
+
+  const history = useHistory();
+  const location = useLocation();
+
+  let results = ["Personne !"];
+  if (location.results) {
+    results = location.results;
+  }
+
   return (
     <IonPage>
 
@@ -16,8 +26,9 @@ const EndRound: React.FC = () => {
         <br />
         <br />
         <br />
-        <div className="hello" >Les gagnants:</div>   {/*logic pour équipe bleu */}
-        <div className="hello" > Bravo à tous ! </div>
+        <div className="hello" >Les gagnants:<br/><br />   {/*logic pour équipe bleu */}
+        {results.map(r => <>{r}<br/></>)}
+        <br/> Bravo à tous ! </div>
       </IonContent>
 
       <IonContent class="ion-text-center">  {/*   Secondary color for the bleu team */}

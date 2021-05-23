@@ -120,6 +120,7 @@ const Buzzer: React.FC = () => {
     if (reussite2 == true) {
       results = results.concat("Equipe 2");
     }
+    console.log(results);
     history.replace({
       pathname: '/endround',
       results: results,
