@@ -67,7 +67,6 @@ const JoueursAttribution1: React.FC = () => {
 
       <IonContent fullscreen class="ion-text-center">
         <p>Votre groupe sera constitué des joueurs suivants.</p>
-        <p>SVP suivez l'ordre, prenez que les n <br></br> premiers noms si vous etes n joueurs</p>
         <p>Choisissez votre personnage!</p>
       </IonContent>
       <IonGrid class="paddingGrid" >
