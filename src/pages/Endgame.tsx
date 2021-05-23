@@ -1,8 +1,32 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent, IonButton } from '@ionic/react';
 import './Endgame.css';
 import logo from '../img/logo.png';
+import {useLocation} from 'react-router';
+import {nb_teams } from '../res/constants';
 
 const Endgame: React.FC = () => {
+
+  const location = useLocation();
+
+  // Get winner
+  let winner = 0;
+  if (location.score1 >= location.score2) {
+    winner += 1;
+  }
+  if (location.score2 >= location.score1) {
+    winner += 2;
+  }
+  // Get winner sentence
+  let winnerSentence = "Ce n'est pas clair qui a gagné...";
+  switch(winner) {
+    case 3:
+      winnerSentence = "Egalité ! Les " + nb_teams + " gagnent!";
+      break;
+    default:
+      winnerSentence = "Cheers ! Team "+winner+" wins!";
+  }
+
+
   return (
     <IonPage>
 
@@ -23,7 +47,7 @@ const Endgame: React.FC = () => {
         <br></br>
         <br></br>
         <br></br>
-        <div className="hello" >C'est la seconde équipe <br></br>qui a gagnée !</div>   {/*logic pour équipe bleu */}
+        <div className="hello" >{winnerSentence}</div>   {/*logic pour équipe bleu */}
         <div className="hello" > Bravo à tous ! </div>
       </IonContent>
 

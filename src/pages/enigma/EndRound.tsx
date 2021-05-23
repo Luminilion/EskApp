@@ -18,7 +18,9 @@ const EndRound: React.FC = () => {
     history.replace({
       pathname: '/indications',
       team: 1,
-      roundsLeft:location.roundsLeft
+      roundsLeft:location.roundsLeft,
+      score1: location.score1,
+      score2: location.score2,
     })
   }
 

@@ -37,6 +37,8 @@ const Buzzer: React.FC = () => {
   // get correct answers
   const answer1 = enigmas[nb_teams*(nb_rounds-location.roundsLeft)].answer;
   const answer2 = enigmas[nb_teams*(nb_rounds-location.roundsLeft) + 1].answer;
+  // set nbr of rounds left
+  const roundsLeft = location.roundsLeft-1;
 
   // Defines timer
   const hoursMinSecs= { hours: 0, minutes: 10, seconds: 0 };
@@ -127,17 +129,20 @@ const Buzzer: React.FC = () => {
     if (reussite2 == true) {
       results = results.concat("Equipe 2");
     }
-    let roundsLeft = location.roundsLeft-1;
     if (roundsLeft >0) {
       history.replace({
         pathname: '/endround',
         results: results,
-        roundsLeft: roundsLeft
+        roundsLeft: roundsLeft,
+        score1: location.score1+reussite1,
+        score2: location.score2+reussite2,
       })
     } else {
       history.replace({
         pathname: '/endgame',
-        results: results
+        results: results,
+        score1: location.score1+reussite1,
+        score2: location.score2+reussite2,
       })
     }
   }
@@ -160,7 +165,6 @@ const Buzzer: React.FC = () => {
       </IonHeader>
 
       <div class="ion-text-center" >
-        {enigmas.map(e => e.answer)} {location.roundsLeft} {answer1} {answer2}
         <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer:</p>
       </div>
 

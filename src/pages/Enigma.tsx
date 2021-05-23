@@ -17,7 +17,9 @@ const Enigma: React.FC = () => {
     history.replace({
       pathname: '/indications',
       team: 1,
-      roundsLeft:nb_rounds
+      roundsLeft:nb_rounds,
+      score1: 0,
+      score2: 0
     })
   }
 
