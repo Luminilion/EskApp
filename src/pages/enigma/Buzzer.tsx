@@ -14,9 +14,12 @@ import './Buzzer.css';
 import './BuzzerSolo.css';
 import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useHistory} from 'react-router';
 
 const Buzzer: React.FC = () => {
+
+  const history = useHistory();
 
   // Modal reactions
   const rep_attente = "On attend votre réponse";
@@ -110,8 +113,25 @@ const Buzzer: React.FC = () => {
 
   // function to execute on end of both teams or end of timer
   function endRound() {
-    
+    let results = new Array();
+    if (reussite1 == true) {
+      results = results.concat("Equipe 1");
+    }
+    if (reussite2 == true) {
+      results = results.concat("Equipe 2");
+    }
+    history.replace({
+      pathname: '/endround',
+      results: results,
+    })
   }
+
+  // called when reussite1 or reussite2 changes state
+  useEffect(() => {
+    if (reussite1 == true && reussite2 == true) {
+      endRound();
+    }
+  }, [reussite1, reussite2]);
 
   return (
     <IonPage>
@@ -141,7 +161,13 @@ const Buzzer: React.FC = () => {
       </IonContent> }
 
       <div class="ion-text-center">
-        <IonButton color="tertiary" > <CountDownTimer hoursMinSecs={hoursMinSecs} oneWin={oneWin} registerOneWin={setOneWin}/>  </IonButton>
+        <IonButton color="tertiary" >
+          <CountDownTimer hoursMinSecs={hoursMinSecs}
+                          oneWin={oneWin}
+                          registerOneWin={setOneWin}
+                          resetFunc={endRound}
+          />
+        </IonButton>
       </div>
 
       {isBuzzer2 &&

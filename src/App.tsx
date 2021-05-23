@@ -10,6 +10,7 @@ import Enigma from './pages/Enigma'
 import JoueursAttribution1 from './pages/JoueursAttribution1';
 import Indications from './pages/enigma/Indications';
 import Buzzer from './pages/enigma/Buzzer';
+import EndRound from './pages/enigma/EndRound';
 import Endgame from './pages/Endgame';
 
 /* Core CSS required for Ionic components to work properly */
@@ -48,22 +49,23 @@ const App: React.FC = () => (
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
-
+        <Route exact path='/numberOfPlayers'>
+          <NumberOfPlayers />
+        </Route>
         <Route exact path="/enigma">
           <Enigma />
         </Route>
-
         <Route exact path="/indications">
           <Indications />
         </Route>
         <Route exact path="/buzzer">
           <Buzzer />
         </Route>
-        <Route exact path='/numberOfPlayers'>
-          <NumberOfPlayers />
-        </Route>
         <Route exact path="/joueursAttribution1">
           <JoueursAttribution1 />
+        </Route>
+        <Route exact path="/endround">
+          <EndRound />
         </Route>
         <Route exact path="/endgame">
           <Endgame />

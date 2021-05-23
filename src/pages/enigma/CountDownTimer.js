@@ -4,7 +4,8 @@ import React from 'react'
 const CountDownTimer = ({
   hoursMinSecs, // object containing hours, minutes and seconds
   oneWin,
-  registerOneWin
+  registerOneWin,
+  resetFunc
 }) => {
 
   // Params fetching and type declaration
@@ -21,7 +22,7 @@ const CountDownTimer = ({
 
   // Declare function for the end of the timer
   function reset() {
-    setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)])
+    resetFunc();
   };
 
   // Declare function to change timer's state
