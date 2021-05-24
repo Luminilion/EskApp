@@ -1,21 +1,27 @@
 const enigmas = [
 	{
-		"answer":"hello"
+		"answer":"834"
 	},
 	{
-		"answer":"world"
+		"answer":"995"
 	},
 	{
-		"answer":"bye"
+		"answer":"912"
 	},
 	{
-		"answer":"planet"
+		"answer":"153"
 	},
 	{
-		"answer":"again"
+		"answer":"712"
 	},
 	{
-		"answer":"hello"
+		"answer":"444"
+	},
+	{
+		"answer":"final"
+	},
+	{
+		"answer":"final"
 	}
 ];
 

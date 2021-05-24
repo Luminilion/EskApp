@@ -26,6 +26,9 @@ const NumberOfPlayers: React.FC = () => {
   const location = useLocation();
   const [nbPlayers, setNbPlayers] = useState<int>(1);
 
+  
+  const teamName = ["Rouge" , "Bleu"]
+
   function addPlayer() {
     if (nbPlayers < 9) {
       setNbPlayers(nbPlayers + 1)
@@ -51,19 +54,30 @@ const NumberOfPlayers: React.FC = () => {
 
       <IonHeader>
         <IonToolbar>
-          <img src={logo} height="50" width="150" />
+          <img src={logo} height="50" width="100" />
           <IonTitle class="ion-text-center">Configuration</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent class="ion-text-center">
-        <IonTitle>Group {location.team}</IonTitle>
-        <p>Set the number of players on your team:</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+        <IonTitle>Equipe { teamName[location.team -1]}</IonTitle>
+        <p>Entrez le nombre de joueurs de votre équipe:</p>
         <IonInput value={nbPlayers} readonly></IonInput>
         <IonButton onClick={addPlayer}>+</IonButton>
         <IonButton onClick={removePlayer}>-</IonButton>
         <br/>
-        <IonButton class="roundJoueur"  shape="round" color="tertiary" onClick={nextConfig}>Next</IonButton>
+        <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+        <IonButton class="roundJoueur"  shape="round" color="tertiary" onClick={nextConfig}>Suivant</IonButton>
       </IonContent>
     </IonPage>
   );

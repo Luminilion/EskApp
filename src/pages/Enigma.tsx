@@ -28,14 +28,14 @@ const Enigma: React.FC = () => {
 
       <IonHeader>
         <IonToolbar>
-          <img src={logo} height="50" width="150" />
+          <img src={logo} height="50" width="100" />
           <IonTitle class="ion-text-center">Indications</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
         <h1 className="title">La partie est créée !</h1>
-        <p>Passez le téléphone à la première équipe.</p>
+        <p>Passez le téléphone à l'équipe Rouge.</p>
         <br />
         <br />
         <IonContent class="ion-text-center" >

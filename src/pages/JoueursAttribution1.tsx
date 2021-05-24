@@ -21,6 +21,8 @@ const JoueursAttribution1: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
 
+  const teamName = ["Rouge" , "Bleu"]
+
   const nbPlayers = location.nbPlayers ? location.nbPlayers : 5;
 
   // load players names
@@ -57,8 +59,8 @@ const JoueursAttribution1: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <div>
-            <img src={logo} height="50" width="150" />
-            <IonTitle class="ion-text-center" >Groupe {location.team}</IonTitle>
+            <img src={logo} height="50" width="100" />
+            <IonTitle class="ion-text-center" >Equipe { teamName[location.team -1]}</IonTitle>
           </div>
         </IonToolbar>
       </IonHeader>
@@ -104,7 +106,7 @@ const JoueursAttribution1: React.FC = () => {
       </IonGrid>
 
       <IonCardContent class="ion-text-center" >
-        <IonButton color="success" onClick={nextConfig}> Groupe suivant </IonButton >
+        <IonButton color="success" onClick={nextConfig}> Suivant </IonButton >
       </IonCardContent>
     </IonPage>
   );

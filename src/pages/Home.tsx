@@ -41,21 +41,29 @@ const Home: React.FC = () => {
             L'application officielle du <br /> jeu EsKit
             <br />
             <br />
-            <img src={logo} height="70" width="150" />
+            <img src={logo} height="80" width="120" />
           </IonTitle>
 
           <br />
           <br />
-
+          <br/>
+      <br/>
+      <br/>
+  
           <IonCardTitle >
-            A quoi voulez-vous jouer ?
+            Bienvenu, préparez vous a une belle partie d'escape game 
           </IonCardTitle>
 
           <br />
           <br />
+          <br/>
+      <br/>
+      <br/>
 
           <IonCardContent >
-            <IonButton expand="block" color="tertiary" onClick={startGame}>Démarrer</IonButton>
+          <div class="ion-text-center">
+            <IonButton class="roundBuzzer" shape="round" expand="block" color="tertiary" onClick={startGame}>Démarrer</IonButton>
+            </div>
           </IonCardContent>
         </IonCard>
 

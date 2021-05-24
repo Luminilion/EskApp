@@ -23,7 +23,7 @@ const Endgame: React.FC = () => {
       winnerSentence = "Egalité ! Les " + nb_teams + " gagnent!";
       break;
     default:
-      winnerSentence = "Cheers ! Team "+winner+" wins!";
+      winnerSentence = "Bravo ! L'équie "+winner+" gange!";
   }
 
 
@@ -31,7 +31,7 @@ const Endgame: React.FC = () => {
     <IonPage>
 
       <IonHeader>
-        <img src={logo} height="50" width="150" />
+        <img src={logo} height="50" width="100" />
         <IonToolbar >
 
 
