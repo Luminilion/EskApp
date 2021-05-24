@@ -7,6 +7,7 @@ import {nb_teams } from '../res/constants';
 const Endgame: React.FC = () => {
 
   const location = useLocation();
+  //      <div className="hello" >{winnerSentence}</div>   {/*logic pour équipe bleu */}
 
   // Get winner
   let winner = 0;
@@ -47,7 +48,7 @@ const Endgame: React.FC = () => {
         <br></br>
         <br></br>
         <br></br>
-        <div className="hello" >{winnerSentence}</div>   {/*logic pour équipe bleu */}
+   
         <div className="hello" > Bravo à tous ! </div>
       </IonContent>
 
@@ -57,7 +58,10 @@ const Endgame: React.FC = () => {
 
 
       <IonContent class="ion-text-center">  {/*   Secondary color for the bleu team */}
-
+      <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <IonCardContent >
           <IonButton class="roundBuzzer" size="large" shape="round" color="secondary" routerLink="/home">Retour au Menu</IonButton>
         </IonCardContent>

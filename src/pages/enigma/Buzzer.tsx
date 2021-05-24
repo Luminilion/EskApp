@@ -41,7 +41,7 @@ const Buzzer: React.FC = () => {
   const roundsLeft = location.roundsLeft-1;
 
   // Defines timer
-  const hoursMinSecs= { hours: 0, minutes: 20, seconds: 0 };
+  const hoursMinSecs= { hours: 0, minutes: 0, seconds: 1 };
   const hoursMinSecsFinal= { hours: 0, minutes: 45, seconds: 0 };
   const times = [ hoursMinSecs , hoursMinSecs, hoursMinSecs, hoursMinSecsFinal]
 
@@ -73,6 +73,10 @@ const Buzzer: React.FC = () => {
   //penalty for wrong answer 
   let [penalty1, setPenalty1] = useState<boolean>(false);
   let [penalty2, setPenalty2] = useState<boolean>(false);
+
+    //penalty for wrong answer 
+  let [isEnd, setIsEnd] = useState<boolean>(false);
+
 
   const teamName = ["Rouge" , "Bleu"]
 
@@ -182,15 +186,30 @@ const Buzzer: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
+     {(location.roundsLeft>1) &&
       <div class="ion-text-center" >
-        <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer:</p>
+        <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer: </p>
       </div>
+    }
 
-      { isBuzzer1 &&
+    {(location.roundsLeft == 1) &&
+      <div class="ion-text-center" >
+        <p>C'est l'enigme finale, entrez la reponse dans votre cadenas: </p>
+      </div>
+     }
+
+      { isBuzzer1 && (location.roundsLeft>1) &&
       <IonContent color="light"  >
         <br /><br /><br />
         <div class="ion-text-center">
         <IonButton class="roundBuzzer" size="large" shape="round" color="danger" onClick={() => { checkAnswer(1, answer1) }}>Equipe Rouge</IonButton>
+        </div>
+      </IonContent> }
+      { isBuzzer1 && (location.roundsLeft == 1) &&
+      <IonContent color="light"  >
+        <br /><br /><br />
+        <div class="ion-text-center">
+        <IonButton class="roundBuzzer" size="large" shape="round" color="danger" >Equipe Rouge</IonButton>
         </div>
       </IonContent> }
 
@@ -226,7 +245,7 @@ const Buzzer: React.FC = () => {
         
       </div>
 
-      {isBuzzer2 &&
+      {isBuzzer2 &&  (location.roundsLeft >1) && 
       <IonContent color="light">
         <br /><br /><br /><br />
         <div class="ion-text-center">
@@ -234,6 +253,17 @@ const Buzzer: React.FC = () => {
         <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(2, answer2) }}>Equipe Bleu</IonButton>
         </div>
       </IonContent> }
+
+      {isBuzzer2 &&  (location.roundsLeft == 1) && 
+      <IonContent color="light">
+        <br /><br /><br /><br />
+        <div class="ion-text-center">
+
+        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" >Equipe Bleu</IonButton>
+        </div>
+      </IonContent> }
+
+
 
       { !isBuzzer2 &&
       <IonContent color="warning"  >
