@@ -15,9 +15,9 @@ import './BuzzerSolo.css';
 import CountDownTimer from './CountDownTimer';
 import logo from '../../img/logo.png';
 import { useState, useEffect } from 'react';
-import { useHistory, useLocation} from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import enigmas from '../../res/enigmas';
-import {nb_rounds, nb_teams } from '../../res/constants';
+import { nb_rounds, nb_teams } from '../../res/constants';
 
 const Buzzer: React.FC = () => {
 
@@ -34,16 +34,22 @@ const Buzzer: React.FC = () => {
   const col_faux = "danger";
   const col_correct = "success";
 
+  let answer1 = "";
+  let answer2 = "";
+  let roundsLeft = 0;
+
   // get correct answers
-  const answer1 = enigmas[nb_teams*(nb_rounds-location.roundsLeft)].answer;
-  const answer2 = enigmas[nb_teams*(nb_rounds-location.roundsLeft) + 1].answer;
-  // set nbr of rounds left
-  const roundsLeft = location.roundsLeft-1;
+  if (location.roundsLeft >= 0) {
+    answer1 = enigmas[nb_teams * (nb_rounds - location.roundsLeft)].answer;
+    answer2 = enigmas[nb_teams * (nb_rounds - location.roundsLeft) + 1].answer;
+    // set nbr of rounds left
+    roundsLeft = location.roundsLeft - 1;
+  }
 
   // Defines timer
-  const hoursMinSecs= { hours: 0, minutes: 0, seconds: 1 };
-  const hoursMinSecsFinal= { hours: 0, minutes: 45, seconds: 0 };
-  const times = [ hoursMinSecs , hoursMinSecs, hoursMinSecs, hoursMinSecsFinal]
+  const hoursMinSecs = { hours: 0, minutes: 20, seconds: 0 };
+  const hoursMinSecsFinal = { hours: 0, minutes: 45, seconds: 0 };
+  const times = [hoursMinSecs, hoursMinSecs, hoursMinSecs, hoursMinSecsFinal]
 
 
   //const hoursMinSecs = { hours: 0, minutes: 10, seconds: 0 }
@@ -70,15 +76,15 @@ const Buzzer: React.FC = () => {
   let [isBuzzer1, setIsBuzzer1] = useState<boolean>(true);
   let [isBuzzer2, setIsBuzzer2] = useState<boolean>(true);
 
-  //penalty for wrong answer 
+  //penalty for wrong answer
   let [penalty1, setPenalty1] = useState<boolean>(false);
   let [penalty2, setPenalty2] = useState<boolean>(false);
 
-    //penalty for wrong answer 
+  //penalty for wrong answer
   let [isEnd, setIsEnd] = useState<boolean>(false);
 
 
-  const teamName = ["Rouge" , "Bleu"]
+  const teamName = ["Rouge", "Bleu"]
 
   // function called when modal is opened
   function checkAnswer(team: int, answer: string) {
@@ -108,7 +114,7 @@ const Buzzer: React.FC = () => {
         setRe1(true);
         setIsBuzzer1(false);
         setOneWin(true);
-  
+
       } else {
         setRe2(true);
         setIsBuzzer2(false);
@@ -117,9 +123,9 @@ const Buzzer: React.FC = () => {
     }
     else {
       if (team === 1) {
-          setPenalty1(true)
+        setPenalty1(true)
       } else {
-          setPenalty2(true)
+        setPenalty2(true)
       }
     }
     setOpenModal(false);
@@ -127,7 +133,11 @@ const Buzzer: React.FC = () => {
 
   // function checking if answer is correct and deriving modal reaction
   let check = () => {
-    if (!text) {
+    if (location.roundsLeft == 1) {
+      setResponse(rep_correct)
+      setEndAction(action_done);
+    }
+    else if (!text) {
       setResponse(rep_attente)
       setColor(col_attente)
     }
@@ -151,20 +161,20 @@ const Buzzer: React.FC = () => {
     if (reussite2 == true) {
       results = results.concat("Equipe 2");
     }
-    if (roundsLeft >0) {
+    if (roundsLeft > 0) {
       history.replace({
         pathname: '/endround',
         results: results,
         roundsLeft: roundsLeft,
-        score1: location.score1+reussite1,
-        score2: location.score2+reussite2,
+        score1: location.score1 + reussite1,
+        score2: location.score2 + reussite2,
       })
     } else {
       history.replace({
         pathname: '/endgame',
         results: results,
-        score1: location.score1+reussite1,
-        score2: location.score2+reussite2,
+        score1: location.score1 + reussite1,
+        score2: location.score2 + reussite2,
       })
     }
   }
@@ -186,91 +196,72 @@ const Buzzer: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-     {(location.roundsLeft>1) &&
-      <div class="ion-text-center" >
-        <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer: </p>
-      </div>
-    }
-
-    {(location.roundsLeft == 1) &&
-      <div class="ion-text-center" >
-        <p>C'est l'enigme finale, entrez la reponse dans votre cadenas: </p>
-      </div>
-     }
-
-      { isBuzzer1 && (location.roundsLeft>1) &&
-      <IonContent color="light"  >
-        <br /><br /><br />
-        <div class="ion-text-center">
-        <IonButton class="roundBuzzer" size="large" shape="round" color="danger" onClick={() => { checkAnswer(1, answer1) }}>Equipe Rouge</IonButton>
+      {(location.roundsLeft > 1) &&
+        <div class="ion-text-center" >
+          <p>Si vous pensez avoir la réponse  appuyer sur votre buzzer: </p>
         </div>
-      </IonContent> }
-      { isBuzzer1 && (location.roundsLeft == 1) &&
-      <IonContent color="light"  >
-        <br /><br /><br />
-        <div class="ion-text-center">
-        <IonButton class="roundBuzzer" size="large" shape="round" color="danger" >Equipe Rouge</IonButton>
-        </div>
-      </IonContent> }
+      }
 
-      { !isBuzzer1 &&
-      <IonContent color="warning"  >
-        <h1 className="congrats">Bravo !</h1>
-        <div className="text">Vous avez trouvé l'indice !</div>
-        <div className="text">L'équipe Bleu n'a plus beaucoup de temps</div>
-      </IonContent> }
+      {(location.roundsLeft == 1) &&
+        <div class="ion-text-center" >
+          <p>C'est l'enigme finale, entrez la reponse dans votre cadenas: </p>
+        </div>
+      }
+
+      {isBuzzer1 &&
+        <IonContent color="light"  >
+          <br /><br /><br />
+          <div class="ion-text-center">
+            <IonButton class="roundBuzzer" size="large" shape="round" color="danger" onClick={() => { checkAnswer(1, answer1) }}>Equipe Rouge</IonButton>
+          </div>
+        </IonContent>}
+
+      {!isBuzzer1 &&
+        <IonContent color="warning"  >
+          <h1 className="congrats">Bravo !</h1>
+          <div className="text">Vous avez trouvé l'indice !</div>
+          <div className="text">L'équipe Bleue n'a plus beaucoup de temps</div>
+        </IonContent>}
 
       <div class="ion-text-center">
         {isBuzzer1 &&
-        <IonButton color="danger" >
-          
-          <CountDownTimer hoursMinSecs={times[ (nb_rounds-location.roundsLeft)]}
-                          oneWin={oneWin}
-                          registerOneWin={setOneWin}
-                          resetFunc={endRound}
-          />
-        </IonButton>
+          <IonButton color="danger" >
+
+            <CountDownTimer hoursMinSecs={times[(nb_rounds - location.roundsLeft)]}
+              oneWin={oneWin}
+              registerOneWin={setOneWin}
+              resetFunc={endRound}
+            />
+          </IonButton>
         }
 
-{isBuzzer2 &&
+        {isBuzzer2 &&
 
-        <IonButton color="tertiary" >
-          <CountDownTimer hoursMinSecs={times[ (nb_rounds-location.roundsLeft)]}
-                          oneWin={oneWin}
-                          registerOneWin={setOneWin}
-                          resetFunc={endRound}
-          />
-        </IonButton>
-}
-        
+          <IonButton color="tertiary" >
+            <CountDownTimer hoursMinSecs={times[(nb_rounds - location.roundsLeft)]}
+              oneWin={oneWin}
+              registerOneWin={setOneWin}
+              resetFunc={endRound}
+            />
+          </IonButton>
+        }
+
       </div>
 
-      {isBuzzer2 &&  (location.roundsLeft >1) && 
-      <IonContent color="light">
-        <br /><br /><br /><br />
-        <div class="ion-text-center">
+      {isBuzzer2 &&
+        <IonContent color="light">
+          <br /><br /><br /><br />
+          <div class="ion-text-center">
+            <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(2, answer2) }}>Equipe Bleue</IonButton>
+          </div>
+        </IonContent>}
 
-        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" onClick={() => { checkAnswer(2, answer2) }}>Equipe Bleu</IonButton>
-        </div>
-      </IonContent> }
-
-      {isBuzzer2 &&  (location.roundsLeft == 1) && 
-      <IonContent color="light">
-        <br /><br /><br /><br />
-        <div class="ion-text-center">
-
-        <IonButton class="roundBuzzer" size="large" shape="round" color="tertiary" >Equipe Bleu</IonButton>
-        </div>
-      </IonContent> }
-
-
-
-      { !isBuzzer2 &&
-      <IonContent color="warning"  >
-        <h1 className="congrats">Bravo !</h1>
-        <div className="text">Vous avez trouvé l'indice !</div>
-        <div className="text">L'équipe Rouge n'a plus beaucoup de temps</div>
-      </IonContent> }
+      {!isBuzzer2 &&
+        <IonContent color="warning"  >
+          <h1 className="congrats">Bravo !</h1>
+          <div className="text">Vous avez trouvé l'indice !</div>
+          <div className="text">L'équipe Rouge n'a plus beaucoup de temps</div>
+        </IonContent>}
 
       <IonModal isOpen={openModal}>
         <IonHeader>
@@ -282,18 +273,18 @@ const Buzzer: React.FC = () => {
         </IonHeader>
 
         <IonContent class="ion-text-center">
-          <br />
-          Equipe {teamName[teamNumber-1]},  saisissez votre réponse:
+          { (location.roundsLeft > 1) && <> <br />
+          Equipe {teamName[teamNumber - 1]},  saisissez votre réponse:
           <br /><br />
-          <IonInput value={text} placeholder="Votre reponse ..." onIonChange={e => { text = e.detail.value! }} clearInput></IonInput>
+          <IonInput value={text} placeholder="Votre reponse ..." onIonChange={e => { text = e.detail.value! }} clearInput></IonInput>  </>}
           <br /><br />
-        
+
           <IonButton color="primary" onClick={() => check()}>
             {"verifier la reponse"}
           </IonButton>
           <br /><br /><br />
           <br /><br />
-          <IonButton shape="round" color={color} disabled> {response} </IonButton>
+          { (location.roundsLeft > 1) && <> <IonButton shape="round" color={color} disabled> {response} </IonButton> </>}
           <br /><br /><br />
           <br /><br /><br />
           <IonButton color="primary" onClick={() => { finishedAnswer(teamNumber) }}>

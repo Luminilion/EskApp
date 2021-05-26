@@ -24,7 +24,7 @@ const Indications: React.FC = () => {
   const history = useHistory();
   const location = useLocation();
 
-  
+
   const teamName = ["Rouge" , "Bleu"]
   const flags = [brazil , japan, egypt , final]
 
@@ -73,18 +73,14 @@ const Indications: React.FC = () => {
         Ouvrez votre enveloppe
         <br />
         <br />
-        <img src={flags[(nb_rounds-location.roundsLeft)]} height="100" width="150" />
+        <img src={flags[(nb_rounds-location.roundsLeft)]} height= "100" width="150" />
         <br />
         <br />
         <p>Vous avez une minute pour mettre<br />
         en place les éléments de l'énigme</p>
         <br />
-       
-       
-        
-        
-        
-      
+
+
       </IonContent>
       <IonContent class="ion-text-center">
         <br />
